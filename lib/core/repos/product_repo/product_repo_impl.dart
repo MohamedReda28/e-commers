@@ -3,6 +3,7 @@ import 'package:fruts_store/core/entitys/ProductEntity.dart';
 import 'package:fruts_store/core/erroes/Failur.dart';
 import 'package:fruts_store/core/repos/product_repo/product_repo.dart';
 import 'package:fruts_store/core/services/services/DataBase_Serveces.dart';
+import 'package:fruts_store/core/uitels/backend%20Impoint.dart';
 
 class productRepoImpl implements productRepo
 {
@@ -16,7 +17,7 @@ class productRepoImpl implements productRepo
 
   @override
   Future<Either<Failur, List<ProductEntity>>> getProduct() async{
-   var products =await dataBaseServeces.getData(path: path);
+   var products =await dataBaseServeces.getData(path: BackEndImpoint.getproducts);
   }
 
 
