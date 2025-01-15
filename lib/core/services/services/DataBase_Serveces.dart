@@ -6,6 +6,6 @@ abstract class DataBaseServeces {
   //بينما data دي الحاجه الا هتبعتها
   Future<void> addData({required String path, required Map<String, dynamic> data,String? documentId});
   //دي method بتجيب بانات المستخدم
-  Future<Map<String,dynamic>> getData({required String path, required String documentId});
+  Future<dynamic> getData({required String path,  String? documentId});
   Future<bool> chackIfDataExist({required String path, required String documentId});
 }

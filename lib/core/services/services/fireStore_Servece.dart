@@ -18,10 +18,15 @@ class FirestoerServeces implements DataBaseServeces {
   }
 
   @override
-  Future<Map<String,dynamic>> getData(
-      {required String path, required String documentId}) async {
-    var data = await firestore.collection(path).doc(documentId).get();
-    return data.data() as Map<String, dynamic> ;
+  Future<dynamic> getData(
+      {required String path,  String? documentId}) async {
+    if (documentId!=null) {
+      var data = await firestore.collection(path).doc(documentId).get();
+      return data.data();
+    }else{
+      var data = await firestore.collection(path).get();
+      return data.docs.map((e)=>e.data()).toList();
+    }
   }
   
   @override
