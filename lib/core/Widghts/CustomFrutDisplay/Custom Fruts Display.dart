@@ -1,11 +1,15 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:fruts_store/core/entitys/ProductEntity.dart';
 import '../../uitels/App_TextStyle.dart';
 import '../../uitels/app_images.dart';
+import '../custom Url image.dart';
 import 'RichTextforSubtitle.dart';
 
 
 class CustomFrutDisplay extends StatelessWidget {
-  const CustomFrutDisplay ({super.key});
+  const CustomFrutDisplay ({super.key, required this.productEntity,});
+  final ProductEntity productEntity;
 
   @override
   Widget build(BuildContext context) {
@@ -23,17 +27,16 @@ class CustomFrutDisplay extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 20,),
-               //Image.asset(Assets.imagesWatermelonPng,),
-              Image.asset(Assets.imagesAvocadoPNG),
+              CustomUrlImage(imageUrl: productEntity.imageUrl!,),
               const SizedBox(height: 5,),
               ListTile(
                 title: Text(
-                  'بطيخ',
+                  productEntity.name,
                   textAlign: TextAlign.right,
                   style: AppStyle.semibold13.copyWith(color: const Color(0xFF0C0D0D),),
                 ),
 
-                subtitle: const FittedBox(child: RichTextforSubtitle()),
+                subtitle:  FittedBox(child: RichTextforSubtitle(productEntity: productEntity)),
 
                 trailing:const CircleAvatar(
 

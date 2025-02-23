@@ -1,20 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruts_store/constsns.dart';
+import 'package:fruts_store/core/cubits/product_cubit/product_cubit_cubit.dart';
 import 'package:fruts_store/features/Best_salling_frut/presentation/Views/Best%20Salling%20view.dart';
-import 'package:fruts_store/features/Home/peresntation/views/widgets/bestSilling_GridView.dart';
-import '../../../../../core/Widghts/CustomFrutDisplay/Custom Fruts Display.dart';
-import 'CustomBestSalar.dart';
-import 'CustomTextFiledForSearch.dart';
-import 'Custom_Home_Appbar.dart';
-import 'ListFeatureItem.dart';
-import 'feature_item.dart';
+import 'package:fruts_store/features/Home/peresntation/views/widgets/CustomBestSalar.dart';
+import 'package:fruts_store/features/Home/peresntation/views/widgets/CustomTextFiledForSearch.dart';
+import 'package:fruts_store/features/Home/peresntation/views/widgets/Custom_Home_Appbar.dart';
+import 'package:fruts_store/features/Home/peresntation/views/widgets/ListFeatureItem.dart';
 
-class Homeviewbody extends StatelessWidget {
-  const Homeviewbody({super.key});
+import 'ProductsGridviewBlocBuilder.dart';
+
+class HomeViewBody extends StatefulWidget {
+  const HomeViewBody({
+    super.key,
+  });
 
   @override
+  State<HomeViewBody> createState() => _HomeViewBodyState();
+}
+
+class _HomeViewBodyState extends State<HomeViewBody> {
+  @override
+  void initState() {
+    context.read<ProductCubit>().getBestSellingProduct();
+    super.initState();
+  }
+  @override
   Widget build(BuildContext context) {
-    return   Padding(
+    return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomScrollView(
         slivers: [
@@ -25,8 +38,7 @@ class Homeviewbody extends StatelessWidget {
               const SizedBox(height: 16,),
               const CustomTextFiledForSearch(),
               const SizedBox(height: 12,),
-
-               const ListfeatureitemFeature(),
+              const ListfeatureitemFeature(),
               const SizedBox(height: 7,),
               Custombestsalar(ontap: () {
 
@@ -34,14 +46,13 @@ class Homeviewbody extends StatelessWidget {
               },),
               const SizedBox(height: 8,),
             ],
-           ),
           ),
-          const BestsillingGridview(),
-
-
-
+          ),
+          ProductsGridviewBlocBuilder(),
         ],
       ),
     );
   }
 }
+
+

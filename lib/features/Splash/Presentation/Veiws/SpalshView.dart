@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fruts_store/core/services/services/firebase_Auth_Servece.dart';
-import 'package:fruts_store/features/Home/peresntation/views/homeView.dart';
+import 'package:fruts_store/features/Home/peresntation/views/mainView.dart';
 import 'package:fruts_store/features/Splash/Presentation/Veiws/widgets/splashViewBody.dart';
 import 'package:fruts_store/features/auth/peresentation/views/SiginView.dart';
 import '../../../../constsns.dart';
@@ -39,7 +39,7 @@ class _SplashVeiwState extends State<SplashVeiw> {
           var isloggedIn= FirebaseAuthServece().isLoggedIn();
 
              if(isloggedIn){
-               Navigator.pushReplacementNamed(context, HomeView.routeName);
+               Navigator.pushReplacementNamed(context, MainView.routeName);
              }else{
                Navigator.pushReplacementNamed(context, SiginView.routeName);
              }

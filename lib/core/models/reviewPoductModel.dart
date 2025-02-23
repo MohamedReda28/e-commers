@@ -34,7 +34,17 @@ class ReviewporductModel {
       data: json['data'],
       ratting: json['ratting'],
       );
+
       
+  }
+  ReviewporductEntity toEntity(){
+    return ReviewporductEntity(
+      name: name, 
+      revdescription: revdescription,
+       image: image,
+       data: data,
+       ratting: ratting,
+       );
   }
 
   toMap() {

@@ -1,17 +1,20 @@
 import 'package:flutter/material.dart';
+import 'package:fruts_store/features/Home/peresntation/views/HomeView.dart';
+import 'package:fruts_store/features/Home/peresntation/views/produt_View.dart';
 
 import '../../../domines/entites/BottonNavigtionarEntite.dart';
 import 'SelectNavigatBarIem.dart';
 
 class Custombottonnavigationbar extends StatefulWidget {
-  const Custombottonnavigationbar({super.key});
-
+  const Custombottonnavigationbar({super.key, required this.changed,});
+  final ValueChanged<int>changed;
   @override
   State<Custombottonnavigationbar> createState() => _CustombottonnavigationbarState();
 }
 
 class _CustombottonnavigationbarState extends State<Custombottonnavigationbar> {
   int activeIndex=0;
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -43,6 +46,7 @@ class _CustombottonnavigationbarState extends State<Custombottonnavigationbar> {
            onTap: (){
              setState(() {
                activeIndex=index;
+               widget.changed(index);
              });
            },
              child: NavigatBarIem(isActive:activeIndex==index , bottonNavigtionarEntite: entity,)),

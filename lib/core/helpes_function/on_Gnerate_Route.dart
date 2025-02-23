@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:fruts_store/features/Home/peresntation/views/produt_View.dart';
 import '../../features/Best_salling_frut/presentation/Views/Best Salling view.dart';
-import '../../features/Home/peresntation/views/homeView.dart';
+import '../../features/Home/peresntation/views/mainView.dart';
 import '../../features/Splash/Presentation/Veiws/SpalshView.dart';
 import '../../features/auth/peresentation/views/SiginView.dart';
 import '../../features/auth/peresentation/views/SignupView.dart';
@@ -16,12 +17,14 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const OnBordView());
     case BestSallingView.routeName:
       return MaterialPageRoute(builder: (context) => const BestSallingView());
-    case HomeView.routeName:
-      return MaterialPageRoute(builder: (context) => const HomeView());
+    case MainView.routeName:
+      return MaterialPageRoute(builder: (context) => const MainView());
     case SiginView.routeName:
       return MaterialPageRoute(builder: (context) => const SiginView());
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (context) => const SignUpView());
+    case ProdutsView.routeName:
+      return MaterialPageRoute(builder: (context) => const ProdutsView());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
