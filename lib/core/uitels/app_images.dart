@@ -30,6 +30,14 @@ class Assets {
   /// Assets/Images/circles.svg
   static const String imagesCircles = "Assets/Images/circles.svg";
 
+  /// Assets for imagesCount
+  /// Assets/Images/count-.svg
+  static const String imagesCountm = "Assets/Images/count-.svg";
+
+  /// Assets for imagesCount+
+  /// Assets/Images/count+.svg
+  static const String imagesCounta = "Assets/Images/count+.svg";
+
   /// Assets for imagesDeleteIcon
   /// Assets/Images/deleteIcon.svg
   static const String imagesDeleteIcon = "Assets/Images/deleteIcon.svg";

@@ -27,7 +27,7 @@ class CustomFrutDisplay extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 20,),
-              CustomUrlImage(imageUrl: productEntity.imageUrl!,),
+              CustomNetworkImage(imageUrl: productEntity.imageUrl!,),
               const SizedBox(height: 5,),
               ListTile(
                 title: Text(

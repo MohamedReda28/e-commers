@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:fruts_store/core/uitels/app_images.dart';
-
-import '../../../../../constsns.dart';
-import '../../../../../core/Widghts/CustomAppbar2.dart';
-import '../../../../../core/cubits/product_cubit/product_cubit_cubit.dart';
-import '../../../../../core/uitels/App_TextStyle.dart';
-import '../../../../Best_salling_frut/presentation/Views/Best Salling view.dart';
-import 'ProductsGridviewBlocBuilder.dart';
-import 'CustomBestSalar.dart';
-import 'CustomTextFiledForSearch.dart';
-import 'Custom_Catogry.dart';
-import 'ProdutviewResult.dart';
+import 'package:fruts_store/constsns.dart';
+import 'package:fruts_store/core/Widghts/CustomAppbar2.dart';
+import 'package:fruts_store/core/cubits/product_cubit/product_cubit_cubit.dart';
+import 'package:fruts_store/features/Home/peresntation/views/widgets/CustomTextFiledForSearch.dart';
+import 'package:fruts_store/features/Home/peresntation/views/widgets/ProductsGridviewBlocBuilder.dart';
+import 'package:fruts_store/features/Home/peresntation/views/widgets/ProdutviewResult.dart';
 
 
 class ProdutViewBody extends StatefulWidget {
