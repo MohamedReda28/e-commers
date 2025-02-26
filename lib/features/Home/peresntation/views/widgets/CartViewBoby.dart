@@ -3,7 +3,6 @@ import 'package:fruts_store/core/Widghts/Custom_Botton.dart';
 import 'package:fruts_store/features/Home/peresntation/views/widgets/CartItemList.dart';
 import '../../../../../constsns.dart';
 import '../../../../../core/Widghts/CustomAppbar2.dart';
-import 'CartItem.dart';
 import 'MassegeInCard.dart';
 
 class Cartviewboby extends StatelessWidget {
@@ -25,7 +24,7 @@ class Cartviewboby extends StatelessWidget {
              ],
             ),
           ),
-          Cartitemlist(),
+          Cartitemlist(cartitems: [],),
 
         ],
       ),

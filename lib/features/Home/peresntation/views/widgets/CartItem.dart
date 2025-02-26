@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:fruts_store/core/uitels/App_Color.dart';
 import 'package:fruts_store/core/uitels/app_images.dart';
+import 'package:fruts_store/features/Home/domines/entites/CartItemEntity.dart';
 import '../../../../../core/Widghts/custom Url image.dart';
 import '../../../../../core/uitels/App_TextStyle.dart';
 import 'CartItemActionBotton.dart';
 
 class CartItim extends StatelessWidget {
-  const CartItim({super.key});
-
+  const CartItim({super.key, required this.cartItemEntity});
+final CartItemEntity cartItemEntity;
   @override
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.sizeOf(context).width;
@@ -22,7 +23,7 @@ class CartItim extends StatelessWidget {
                   height: 100,
                   decoration: BoxDecoration(color: Color(0xFFF3F5F7)),
                   child: Center(
-                    child:CustomNetworkImage(imageUrl: 'https://hfactftuiammeesnsrzg.supabase.co/storage/v1/object/public/fruits_image/images/37.jpg..jpg',
+                    child:CustomNetworkImage(imageUrl: cartItemEntity.productEntity.imageUrl!,
                     ),
                   )
               ),
@@ -35,8 +36,8 @@ class CartItim extends StatelessWidget {
                    Row(
                     mainAxisAlignment: MainAxisAlignment.end,
                      children: [
-                       const Text(
-                         'بطيخ',
+                        Text(
+                         cartItemEntity.productEntity.name,
                          style: AppStyle.bold13,
                         ),
                         Spacer(),
@@ -45,7 +46,7 @@ class CartItim extends StatelessWidget {
                      ],
                    ),
                   Text(
-                   '3 كم',
+                   '${cartItemEntity.CalculteTotleWeight()} كم',
                    textAlign: TextAlign.right,
                    style: AppStyle.regular13.copyWith(
                      color: AppColor.secondColor,
@@ -55,19 +56,17 @@ class CartItim extends StatelessWidget {
                    children: [
                      Cartitemactionbotton(),
                       Spacer(),
-                      Text('60 جنيه',style: AppStyle.bold19.copyWith(
+                      Text('${cartItemEntity.CalculteTotlePrice()} جنيه',style: AppStyle.bold19.copyWith(
                            color: AppColor.secondColor,
                              ),
                             ),
                            ],
-
                          ),
                      SizedBox(height: 5,),
 
                    ],
                  ),
                )
-
             ],
           ),
         ),
