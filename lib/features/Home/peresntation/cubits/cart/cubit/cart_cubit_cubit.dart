@@ -1,24 +1,37 @@
 import 'package:bloc/bloc.dart';
+import 'package:fruts_store/core/entitys/ProductEntity.dart';
 import 'package:fruts_store/features/Home/domines/entites/CardEntity.dart';
 import 'package:fruts_store/features/Home/domines/entites/CartItemEntity.dart';
 import 'package:meta/meta.dart';
 
 part 'cart_cubit_state.dart';
 
-class CartCubitCubit extends Cubit<CartCubitState> {
-  CartCubitCubit() : super(CartCubitInitial());
+class CartCubit extends Cubit<CartCubitState> {
+  CartCubit() : super(CartCubitInitial());
  
   CartEntity cartEntity = CartEntity([]);
   @override
-  void AddCardItem(CartItemEntity cartItemEntity){
+  void AddProduct(ProductEntity productEntity) {
 
-    cartEntity.addCardItem(cartItemEntity);
+    bool isExis= cartEntity.isExis(productEntity);
+     var carsItem= cartEntity.gitProduct(productEntity);
+    if(isExis){
 
-    emit(CartCubitAdd());
+     carsItem.increaseCount();
+      
+    } else{
+
+         cartEntity.addCardItem(carsItem);
+
+    }
+
+
+
+    emit(CartProductAdd());
   }
   void RemoveCardItem(CartItemEntity cartItemEntity){
 
-    emit(CartCubitRemove());
+    emit(CartProductRemove());
   }
   
 }

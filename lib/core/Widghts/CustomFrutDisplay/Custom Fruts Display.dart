@@ -1,6 +1,9 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruts_store/core/entitys/ProductEntity.dart';
+import 'package:fruts_store/core/services/services/CustomBlocObserver.dart';
+import 'package:fruts_store/features/Home/peresntation/cubits/cart/cubit/cart_cubit_cubit.dart';
 import '../../uitels/App_TextStyle.dart';
 import '../../uitels/app_images.dart';
 import '../custom Url image.dart';
@@ -38,11 +41,16 @@ class CustomFrutDisplay extends StatelessWidget {
 
                 subtitle:  FittedBox(child: RichTextforSubtitle(productEntity: productEntity)),
 
-                trailing:const CircleAvatar(
-
-                  backgroundColor: Color(0xFF1B5E37),
-
-                  child: Icon(Icons.add,color: Colors.white,),
+                trailing:GestureDetector(
+                  onTap: (){
+                    context.read<CartCubit>().AddProduct(productEntity);
+                  },
+                  child: const CircleAvatar(
+                  
+                    backgroundColor: Color(0xFF1B5E37),
+                  
+                    child: Icon(Icons.add,color: Colors.white,),
+                  ),
                 ),
               ),
 
