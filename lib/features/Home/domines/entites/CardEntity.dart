@@ -10,7 +10,14 @@ class CartEntity{
   addCardItem(CartItemEntity cartItemEntity){
     carsItems.add(cartItemEntity);
   }
-  
+  double CalculteTotlePrice(){
+    double totalPrice=0;
+    for(var carsItem in carsItems ){
+      totalPrice+=carsItem.CalculteTotlePrice();
+    }
+    return totalPrice;
+  }
+
   bool isExis(ProductEntity product){
 
     for(var carsItem in carsItems) {

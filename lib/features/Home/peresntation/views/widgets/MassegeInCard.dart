@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruts_store/core/services/services/CustomBlocObserver.dart';
+import 'package:fruts_store/features/Home/peresntation/cubits/cart/cubit/cart_cubit_cubit.dart';
 
 import '../../../../../core/uitels/App_TextStyle.dart';
 
@@ -19,7 +22,7 @@ class Massegeincard extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Text(
-            'لديك 3 منتجات في سله التسوق',
+            'لديك ${context.watch<CartCubit>().cartEntity.carsItems.length} منتجات في سله التسوق',
             style: AppStyle.bold13.copyWith(
               color:  const Color(0xFF1B5E37),
             ),

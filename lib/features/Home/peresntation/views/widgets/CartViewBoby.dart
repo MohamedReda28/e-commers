@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruts_store/core/Widghts/Custom_Botton.dart';
+import 'package:fruts_store/features/Home/peresntation/cubits/cart/cubit/cart_cubit_cubit.dart';
 import 'package:fruts_store/features/Home/peresntation/views/widgets/CartItemList.dart';
 import '../../../../../constsns.dart';
 import '../../../../../core/Widghts/CustomAppbar2.dart';
@@ -13,9 +15,9 @@ class Cartviewboby extends StatelessWidget {
     return Stack(
       children:  [
         CustomScrollView(
-        slivers: const [
+        slivers:  [
           SliverToBoxAdapter(child: Column(
-            children: [
+            children: const [
               SizedBox(height: kTopPadding,),
               CustomAppbar2(title: 'السلة',visableicon: false,),
               SizedBox(height: 16,),
@@ -24,7 +26,7 @@ class Cartviewboby extends StatelessWidget {
              ],
             ),
           ),
-          Cartitemlist(cartitems: [],),
+          Cartitemlist(cartitems: context.watch<CartCubit>().cartEntity.carsItems),
 
         ],
       ),
@@ -32,7 +34,7 @@ class Cartviewboby extends StatelessWidget {
           left: 15,
           right: 15,
           bottom: MediaQuery.sizeOf(context).height *0.06,
-            child: CustomBotton(title: 'الدفع  120جنيه', ontap: (){})),
+            child: CustomBotton(title: 'الدفع  ${context.watch<CartCubit>().cartEntity.CalculteTotlePrice()}جنيه ', ontap: (){})),
 
       ]
     );
