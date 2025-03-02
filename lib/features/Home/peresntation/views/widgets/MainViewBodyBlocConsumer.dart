@@ -16,8 +16,11 @@ class MainViewBodyBlocConsumer extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocListener<CartCubit, CartCubitState>(
       listener: (context, state) {
-        if (state is CartProductAdd) {
+        if (state is CartItemAdd) {
           return BuildSnakBar(context, "تمت العمليه بنجاح");
+        }
+        if (state is CartItemRemove) {
+          return BuildSnakBar(context, "تمت حذف العنصر ");
         }
       },
       child:MainviewBody(currintindex: currintindex),

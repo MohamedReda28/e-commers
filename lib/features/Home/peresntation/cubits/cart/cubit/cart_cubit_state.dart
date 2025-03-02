@@ -4,5 +4,5 @@ part of 'cart_cubit_cubit.dart';
 sealed class CartCubitState {}
 
 final class CartCubitInitial extends CartCubitState {}
-final class CartProductAdd extends CartCubitState {}
-final class CartProductRemove extends CartCubitState {}
+final class CartItemAdd extends CartCubitState {}
+final class CartItemRemove extends CartCubitState {}

@@ -10,6 +10,13 @@ class CartEntity{
   addCardItem(CartItemEntity cartItemEntity){
     carsItems.add(cartItemEntity);
   }
+
+
+  removeCartItem(CartItemEntity cartItemEntity){
+    carsItems.remove(cartItemEntity);
+  }
+
+
   double CalculteTotlePrice(){
     double totalPrice=0;
     for(var carsItem in carsItems ){
