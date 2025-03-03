@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruts_store/core/services/services/CustomBlocObserver.dart';
-import 'package:fruts_store/features/Home/peresntation/cubits/cart/cubit/cart_cubit_cubit.dart';
+import 'package:fruts_store/features/Home/peresntation/cubits/cart/cart_cubit_cubit.dart';
 
 import '../../../../../core/uitels/App_TextStyle.dart';
 
