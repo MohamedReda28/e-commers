@@ -6,6 +6,7 @@ import '../../features/Splash/Presentation/Veiws/SpalshView.dart';
 import '../../features/auth/peresentation/views/SiginView.dart';
 import '../../features/auth/peresentation/views/SignupView.dart';
 import '../../features/on_bording/peresentation/Vews/on_bordView.dart';
+import '../../features/shipping/presintation/views/shipping_view.dart';
 
 
 
@@ -25,6 +26,8 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const SignUpView());
     case ProdutsView.routeName:
       return MaterialPageRoute(builder: (context) => const ProdutsView());
+    case Shipping_View.routeName:
+      return MaterialPageRoute(builder: (context) => const Shipping_View());
     default:
       return MaterialPageRoute(builder: (context) => const Scaffold());
   }
