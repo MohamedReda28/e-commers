@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:fruts_store/features/Home/peresntation/views/HomeView.dart';
-import 'package:fruts_store/features/Home/peresntation/views/produt_View.dart';
-
 import '../../../domines/entites/BottonNavigtionarEntite.dart';
 import 'SelectNavigatBarIem.dart';
 

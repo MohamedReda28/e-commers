@@ -3,7 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruts_store/core/Widghts/Custom_Botton.dart';
 import 'package:fruts_store/features/Home/peresntation/cubits/cart/cart_cubit_cubit.dart';
 import 'package:fruts_store/features/Home/peresntation/cubits/cartItem/cart_item_cubit.dart';
-import 'package:fruts_store/features/shipping/presintation/views/shipping_view.dart';
+import 'package:fruts_store/features/checkout/presintation/views/shipping_view.dart';
 
 class CastomCartBotton extends StatelessWidget {
   const CastomCartBotton({
@@ -18,7 +18,7 @@ class CastomCartBotton extends StatelessWidget {
             title:
                 'الدفع  ${context.watch<CartCubit>().cartEntity.CalculteTotlePrice()}جنيه ',
             ontap: () {
-              Navigator.pushNamed(context, Shipping_View.routeName);
+              Navigator.pushNamed(context, Checkout_View.routeName);
             });
       },
     );
