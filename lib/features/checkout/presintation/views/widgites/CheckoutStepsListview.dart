@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:fruts_store/features/checkout/presintation/views/widgites/Scetion_Shipping.dart';
 
+import 'Address_PageView.dart';
+
 class Checkout_Steps_Listview extends StatelessWidget {
    Checkout_Steps_Listview({ super.key,required this.pageController,});
 
@@ -22,7 +24,7 @@ class Checkout_Steps_Listview extends StatelessWidget {
   }
   List<Widget>getPage = [
     ScetionShipping(),
-    Text('data'),
+    AddressPageview(),
     Text('data'),
     Text('data'),
 
