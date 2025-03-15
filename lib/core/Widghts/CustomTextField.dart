@@ -19,6 +19,7 @@ class CustomTextFormField extends StatelessWidget {
 
   Widget build(BuildContext context) {
     return TextFormField(
+
       obscureText:obscureText,
       onSaved: onSaved,
       validator: (value) {

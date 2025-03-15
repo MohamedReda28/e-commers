@@ -26,10 +26,7 @@ List<BottonTapBarEntity> bottonTapBarEntity= [
         InActivenum: '3',
         title: 'الدفع'),
 
-    BottonTapBarEntity(
 
-        InActivenum: '4',
-        title: 'المراجعه'),
 ];
 
 
