@@ -4,13 +4,11 @@ import 'package:fruts_store/features/checkout/domines/entitys/Address_OrderEntit
 class OrderEntity{
 
  final CartEntity cartList;
+ final String uID;
   bool? paywithCash;
   AddressOrderentity addressOrderentity = AddressOrderentity();
 
-  OrderEntity(this.cartList,  {this.paywithCash,});
-
- 
-
+  OrderEntity({required this.cartList,this.paywithCash,required this.uID,});
 
 
 }

@@ -19,21 +19,21 @@ final CartItemEntity cartItemEntity;
           icon: Icons.add,
           color: AppColor.kPrimaryColor,
           onpressed: () {
-            cartItemEntity.increaseCount();
+            cartItemEntity.increaseQuantity();
             context.read<CartItemCubit>().updateCartItem(cartItemEntity);
           },
           colorIcon:Colors.white,
         ),
         Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16),
-          child: Text('${cartItemEntity.count}',
+          child: Text('${cartItemEntity.quantity}',
             style: AppStyle.bold16,),
         ),
         CustomCartitemactionbotton(
           icon: Icons.remove,
           color:Color(0xFFF3F5F7),
           onpressed: () {
-            cartItemEntity.decreaseCount();
+            cartItemEntity.decreaseQuantity();
             context.read<CartItemCubit>().updateCartItem(cartItemEntity);
 
           },

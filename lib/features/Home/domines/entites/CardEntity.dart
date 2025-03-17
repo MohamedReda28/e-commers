@@ -43,7 +43,7 @@ class CartEntity{
       }
     }
     return 
-     CartItemEntity( productEntity: productEntity,count: 1); 
+     CartItemEntity( productEntity: productEntity,quantity: 1);
      
   }
   
