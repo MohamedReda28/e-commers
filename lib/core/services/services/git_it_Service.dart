@@ -1,9 +1,10 @@
 
 
+import 'package:fruts_store/core/repos/order_repo/order_reop.dart';
+import 'package:fruts_store/core/repos/order_repo/oreder_repo_impl.dart';
 import 'package:fruts_store/core/services/services/DataBase_Serveces.dart';
 import 'package:fruts_store/core/services/services/fireStore_Servece.dart';
 import 'package:get_it/get_it.dart';
-
 import '../../../features/auth/data/repos/repoImplemantation.dart';
 import '../../../features/auth/domain/repos/Auth Repo.dart';
 import '../../repos/product_repo/product_repo.dart';
@@ -27,5 +28,10 @@ void setupGitit() {
        productRepoImpl(
          dataBaseServeces: getIt<DataBaseServeces>(),
        ),
+   );
+   getIt.registerSingleton<OrderRepo>(
+     OrederRepoImpl(
+       dataBaseServeces: getIt<DataBaseServeces>(),
+     ),
    );
 }

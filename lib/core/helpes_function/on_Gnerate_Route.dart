@@ -6,7 +6,7 @@ import '../../features/Home/peresntation/views/mainView.dart';
 import '../../features/Splash/Presentation/Veiws/SpalshView.dart';
 import '../../features/auth/peresentation/views/SiginView.dart';
 import '../../features/auth/peresentation/views/SignupView.dart';
-import '../../features/checkout/presintation/views/shipping_view.dart';
+import '../../features/checkout/presintation/views/checkout_view.dart';
 import '../../features/on_bording/peresentation/Vews/on_bordView.dart';
 
 

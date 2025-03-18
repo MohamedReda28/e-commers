@@ -3,6 +3,9 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruts_store/constsns.dart';
 import 'package:fruts_store/core/Widghts/CustomAppbar2.dart';
 import 'package:fruts_store/core/Widghts/Custom_Botton.dart';
+import 'package:fruts_store/features/checkout/presintation/maneger/addProductCubit/order_cubit.dart';
+import 'package:fruts_store/core/repos/order_repo/order_reop.dart';
+import 'package:fruts_store/core/services/services/git_it_Service.dart';
 import 'package:fruts_store/features/checkout/presintation/views/widgites/CheckoutStepsListview.dart';
 
 import '../../../../../core/helpes_function/BuildSnakBar.dart';
@@ -71,6 +74,9 @@ class _Checkout_View_BodyState extends State<Checkout_View_Body> {
                      shippingSection_Validation(context);
                   }else if (currentPageActive==1){
                     addressSection_Validation();
+                  }else{
+                    var orderEntity = context.read<OrderEntity>();
+                    context.read<AddOrderCubit>().addOrder(orderEntity);
                   }
             }),
             SizedBox(height: 32),
