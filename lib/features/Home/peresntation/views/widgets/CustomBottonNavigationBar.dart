@@ -3,14 +3,18 @@ import '../../../domines/entites/BottonNavigtionarEntite.dart';
 import 'SelectNavigatBarIem.dart';
 
 class Custombottonnavigationbar extends StatefulWidget {
-  const Custombottonnavigationbar({super.key, required this.changed,});
-  final ValueChanged<int>changed;
+  const Custombottonnavigationbar({
+    super.key,
+    required this.changed,
+  });
+  final ValueChanged<int> changed;
   @override
-  State<Custombottonnavigationbar> createState() => _CustombottonnavigationbarState();
+  State<Custombottonnavigationbar> createState() =>
+      _CustombottonnavigationbarState();
 }
 
 class _CustombottonnavigationbarState extends State<Custombottonnavigationbar> {
-  int activeIndex=0;
+  int activeIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -33,28 +37,27 @@ class _CustombottonnavigationbarState extends State<Custombottonnavigationbar> {
             spreadRadius: 0,
           ),
         ],
-      ), child: Row(
-      children: bottomNavigtionarEntites.asMap().entries.map((e){
-        var index=e.key;
-        var entity=e.value;
-       return Expanded(
-         flex: activeIndex==index ?3:2,
-         child: GestureDetector(
-           onTap: (){
-             setState(() {
-               activeIndex=index;
-               widget.changed(index);
-             });
-           },
-             child: NavigatBarIem(isActive:activeIndex==index , bottonNavigtionarEntite: entity,)),
-       );
-      }).toList(),
-    ),
+      ),
+      child: Row(
+        children: bottomNavigtionarEntites.asMap().entries.map((e) {
+          var index = e.key;
+          var entity = e.value;
+          return Expanded(
+            flex: activeIndex == index ? 3 : 2,
+            child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    activeIndex = index;
+                    widget.changed(index);
+                  });
+                },
+                child: NavigatBarIem(
+                  isActive: activeIndex == index,
+                  bottonNavigtionarEntite: entity,
+                )),
+          );
+        }).toList(),
+      ),
     );
   }
 }
-
-
-
-
-

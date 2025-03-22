@@ -19,7 +19,6 @@ class FeatureItem extends StatelessWidget {
         child: AspectRatio(
           aspectRatio: 342 / 158,
           child: Stack(
-      
             children: [
               Positioned(
                 top: 0,
@@ -44,7 +43,6 @@ class FeatureItem extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-
                       const SizedBox(
                         height: 25,
                       ),

@@ -19,12 +19,11 @@ class CastomCartBotton extends StatelessWidget {
             title:
                 'الدفع  ${context.watch<CartCubit>().cartEntity.CalculteTotlePrice()}جنيه ',
             ontap: () {
-              if(context.read<CartCubit>().cartEntity.carsItems.isNotEmpty) {
+              if (context.read<CartCubit>().cartEntity.carsItems.isNotEmpty) {
                 Navigator.pushNamed(context, Checkout_View.routeName,
-                arguments: context.read<CartCubit>().cartEntity
-                );
-              }else{
-                BuildSnakBar(context , 'لا يوجد منتجات في السله');
+                    arguments: context.read<CartCubit>().cartEntity);
+              } else {
+                BuildSnakBar(context, 'لا يوجد منتجات في السله');
               }
             });
       },

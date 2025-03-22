@@ -7,26 +7,28 @@ import '../../../../../core/uitels/App_TextStyle.dart';
 
 class TermsAndCondetion extends StatefulWidget {
   const TermsAndCondetion({super.key, required this.changed});
-final ValueChanged<bool>changed;
+  final ValueChanged<bool> changed;
   @override
   State<TermsAndCondetion> createState() => _TermsAndCondetionState();
 }
 
 class _TermsAndCondetionState extends State<TermsAndCondetion> {
-    bool isCheck=false;
+  bool isCheck = false;
   @override
   Widget build(BuildContext context) {
     return Row(
       children: [
-
-        CustomCheckBox(isCheck:isCheck, onChecked: (value) {
-         isCheck= value;
-         widget.changed(value);
-          setState(() {
-
-          });
-        },),
-        SizedBox(width: 16,),
+        CustomCheckBox(
+          isCheck: isCheck,
+          onChecked: (value) {
+            isCheck = value;
+            widget.changed(value);
+            setState(() {});
+          },
+        ),
+        SizedBox(
+          width: 16,
+        ),
         Expanded(
           child: Text.rich(
             TextSpan(

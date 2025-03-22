@@ -19,7 +19,6 @@ class ProdutviewResult extends StatelessWidget {
           ),
         ),
         SvgPicture.asset(Assets.imagesFilrting),
-
       ],
     );
   }

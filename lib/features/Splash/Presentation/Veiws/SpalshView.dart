@@ -7,7 +7,6 @@ import '../../../../constsns.dart';
 import '../../../../core/services/services/shardpreferance_Singlton.dart';
 import '../../../on_bording/peresentation/Vews/on_bordView.dart';
 
-
 class SplashVeiw extends StatefulWidget {
   const SplashVeiw({super.key});
   static const routeName = 'splash';
@@ -36,14 +35,13 @@ class _SplashVeiwState extends State<SplashVeiw> {
       const Duration(seconds: 3),
       () {
         if (isBordingViewSee) {
-          var isloggedIn= FirebaseAuthServece().isLoggedIn();
+          var isloggedIn = FirebaseAuthServece().isLoggedIn();
 
-             if(isloggedIn){
-               Navigator.pushReplacementNamed(context, MainView.routeName);
-             }else{
-               Navigator.pushReplacementNamed(context, SiginView.routeName);
-             }
-
+          if (isloggedIn) {
+            Navigator.pushReplacementNamed(context, MainView.routeName);
+          } else {
+            Navigator.pushReplacementNamed(context, SiginView.routeName);
+          }
         } else {
           Navigator.pushReplacementNamed(context, OnBordView.routeName);
         }

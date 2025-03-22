@@ -5,7 +5,6 @@ import 'package:fruts_store/core/helpes_function/getUser.dart';
 import '../../../../../core/uitels/App_TextStyle.dart';
 import '../../../../../core/uitels/app_images.dart';
 
-
 class CustomHomeAppbar extends StatelessWidget {
   const CustomHomeAppbar({super.key});
 
@@ -21,7 +20,6 @@ class CustomHomeAppbar extends StatelessWidget {
         style: AppStyle.bold16,
       ),
       leading: Image.asset(Assets.imagesAvatar),
-
       trailing: Container(
         width: 34,
         height: 34,

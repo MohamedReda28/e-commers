@@ -11,15 +11,15 @@ import 'features/Splash/Presentation/Veiws/SpalshView.dart';
 import 'firebase_options.dart';
 import 'generated/l10n.dart';
 
-void main() async{
-   WidgetsFlutterBinding.ensureInitialized();
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
-   Bloc.observer = MyBlocObserver();
+  Bloc.observer = MyBlocObserver();
 
-   await   SharPref.init();
-   setupGitit();
+  await SharPref.init();
+  setupGitit();
   runApp(const FluitHub());
 }
 
@@ -27,12 +27,11 @@ class FluitHub extends StatelessWidget {
   const FluitHub({super.key});
   @override
   Widget build(BuildContext context) {
-    return    MaterialApp(
+    return MaterialApp(
       theme: ThemeData(
           fontFamily: 'Cairo',
           scaffoldBackgroundColor: Colors.white,
-          colorScheme: ColorScheme.fromSeed(seedColor: AppColor.kPrimaryColor)
-      ),
+          colorScheme: ColorScheme.fromSeed(seedColor: AppColor.kPrimaryColor)),
       localizationsDelegates: const [
         S.delegate,
         GlobalMaterialLocalizations.delegate,
@@ -42,7 +41,7 @@ class FluitHub extends StatelessWidget {
       supportedLocales: S.delegate.supportedLocales,
       locale: const Locale('ar'),
       debugShowCheckedModeBanner: false,
-      onGenerateRoute:  onGenerateRoute,
+      onGenerateRoute: onGenerateRoute,
       initialRoute: SplashVeiw.routeName,
     );
   }

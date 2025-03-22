@@ -8,23 +8,22 @@ part 'cart_cubit_state.dart';
 
 class CartCubit extends Cubit<CartCubitState> {
   CartCubit() : super(CartCubitInitial());
- 
+
   CartEntity cartEntity = CartEntity([]);
   @override
   void AddProduct(ProductEntity productEntity) {
-    bool isExis= cartEntity.isExis(productEntity);
-     var carsItem= cartEntity.gitProduct(productEntity);
-    if(isExis){
-     carsItem.increaseQuantity();
-    } else{
-         cartEntity.addCardItem(carsItem);
+    bool isExis = cartEntity.isExis(productEntity);
+    var carsItem = cartEntity.gitProduct(productEntity);
+    if (isExis) {
+      carsItem.increaseQuantity();
+    } else {
+      cartEntity.addCardItem(carsItem);
     }
     emit(CartItemAdd());
   }
 
-  void RemoveCardItem(CartItemEntity cartItemEntity){
+  void RemoveCardItem(CartItemEntity cartItemEntity) {
     cartEntity.removeCartItem(cartItemEntity);
     emit(CartItemRemove());
   }
-  
 }

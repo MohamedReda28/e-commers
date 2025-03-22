@@ -23,8 +23,7 @@ class MainViewBodyBlocConsumer extends StatelessWidget {
           return BuildSnakBar(context, "تمت حذف العنصر ");
         }
       },
-      child:MainviewBody(currintindex: currintindex),
-
+      child: MainviewBody(currintindex: currintindex),
     );
   }
 }

@@ -39,13 +39,10 @@ class _CustomSwitchButtonState extends State<CustomSwitchButton> {
             });
             widget.onChanged(value);
           },
-          activeColor:  Colors.white,
-          activeTrackColor:  AppColor.kPrimaryColor,
-          inactiveThumbColor: AppColor.kPrimaryColor ,
-          inactiveTrackColor:  Colors.white,
-
-
-
+          activeColor: Colors.white,
+          activeTrackColor: AppColor.kPrimaryColor,
+          inactiveThumbColor: AppColor.kPrimaryColor,
+          inactiveTrackColor: Colors.white,
         ),
         SizedBox(width: 10),
         Text(
@@ -55,7 +52,6 @@ class _CustomSwitchButtonState extends State<CustomSwitchButton> {
             color: Colors.grey[700],
           ),
         ),
-
       ],
     );
   }

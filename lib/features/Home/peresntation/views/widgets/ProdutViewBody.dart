@@ -7,7 +7,6 @@ import 'package:fruts_store/features/Home/peresntation/views/widgets/CustomTextF
 import 'package:fruts_store/features/Home/peresntation/views/widgets/ProductsGridviewBlocBuilder.dart';
 import 'package:fruts_store/features/Home/peresntation/views/widgets/ProdutviewResult.dart';
 
-
 class ProdutViewBody extends StatefulWidget {
   const ProdutViewBody({super.key});
 
@@ -20,24 +19,38 @@ class _ProdutViewBodyState extends State<ProdutViewBody> {
     context.read<ProductCubit>().getBestSellingProduct();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              const SizedBox(height: kTopPadding,),
-              const CustomAppbar2(title: 'المنتجات',visableArw: false,),
-              const SizedBox(height: 16,),
-              const CustomTextFiledForSearch(),
-              const SizedBox(height: 12,),
-              ProdutviewResult(productleanth: context.read<ProductCubit>().productleanth),
-              const SizedBox(height: 12,),
-            ],
-          ),
+          SliverToBoxAdapter(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const SizedBox(
+                  height: kTopPadding,
+                ),
+                const CustomAppbar2(
+                  title: 'المنتجات',
+                  visableArw: false,
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
+                const CustomTextFiledForSearch(),
+                const SizedBox(
+                  height: 12,
+                ),
+                ProdutviewResult(
+                    productleanth: context.read<ProductCubit>().productleanth),
+                const SizedBox(
+                  height: 12,
+                ),
+              ],
+            ),
           ),
           const ProductsGridviewBlocBuilder(),
         ],
@@ -45,6 +58,3 @@ class _ProdutViewBodyState extends State<ProdutViewBody> {
     );
   }
 }
-
-
-

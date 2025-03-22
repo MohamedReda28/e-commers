@@ -19,7 +19,10 @@ class SplashViewBody extends StatelessWidget {
           ],
         ),
         SvgPicture.asset(Assets.imagesLogoApp),
-        SvgPicture.asset(Assets.imagesCircles,fit: BoxFit.fill,),
+        SvgPicture.asset(
+          Assets.imagesCircles,
+          fit: BoxFit.fill,
+        ),
       ],
     );
   }

@@ -10,27 +10,27 @@ class BestsallingviewBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  const Padding(
+    return const Padding(
       padding: EdgeInsets.symmetric(horizontal: 16),
-      child: CustomScrollView(
-
-        slivers: [
-          SliverToBoxAdapter(
-             child: Column(
-               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                 SizedBox(height: kTopPadding,),
-                 CustomAppbar2(title: 'الأكثر مبيعًا',),
-                 SizedBox(height: 24),
-                Text('الأكثر مبيعًا',style:AppStyle.bold16),
-                  SizedBox(height: 8),
-              ],
-             ),
+      child: CustomScrollView(slivers: [
+        SliverToBoxAdapter(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: kTopPadding,
+              ),
+              CustomAppbar2(
+                title: 'الأكثر مبيعًا',
+              ),
+              SizedBox(height: 24),
+              Text('الأكثر مبيعًا', style: AppStyle.bold16),
+              SizedBox(height: 8),
+            ],
           ),
-          // BestsillingGridview(),
-
-        ]
-      ),
+        ),
+        // BestsillingGridview(),
+      ]),
     );
   }
 }

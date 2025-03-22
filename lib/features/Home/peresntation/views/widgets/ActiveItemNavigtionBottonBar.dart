@@ -5,10 +5,12 @@ import 'package:fruts_store/core/uitels/app_images.dart';
 
 class ActiveItem extends StatelessWidget {
   const ActiveItem({
-    super.key, required this.image, required this.name,
+    super.key,
+    required this.image,
+    required this.name,
   });
 
-  final String image ,name;
+  final String image, name;
   @override
   Widget build(BuildContext context) {
     return Center(
@@ -32,9 +34,14 @@ class ActiveItem extends StatelessWidget {
                   borderRadius: BorderRadius.circular(30),
                 ),
               ),
-              child: SvgPicture.asset(image,fit: BoxFit.none,),
+              child: SvgPicture.asset(
+                image,
+                fit: BoxFit.none,
+              ),
             ),
-            SizedBox(width: 4,),
+            SizedBox(
+              width: 4,
+            ),
             Text(name,
                 style: AppStyle.semibold11.copyWith(
                   color: Color(0xFF1B5E37),

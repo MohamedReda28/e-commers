@@ -9,12 +9,12 @@ class MainviewBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return IndexedStack(
-          index:currintindex,
-          children: const [
-             Homeview(),
-             ProdutsView(),
-             CartViews(),
-          ],
-        );
+      index: currintindex,
+      children: const [
+        Homeview(),
+        ProdutsView(),
+        CartViews(),
+      ],
+    );
   }
 }

@@ -18,9 +18,9 @@ class CartItim extends StatelessWidget {
   Widget build(BuildContext context) {
     var screenWidth = MediaQuery.sizeOf(context).width;
     return BlocBuilder<CartItemCubit, CartItemState>(
-      buildWhen: (prev,current){
-        if(current is CartItemUpdate){
-          if(current.cartItemEntity==cartItemEntity){
+      buildWhen: (prev, current) {
+        if (current is CartItemUpdate) {
+          if (current.cartItemEntity == cartItemEntity) {
             return true;
           }
         }

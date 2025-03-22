@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruts_store/core/Widghts/CustomProgressHUD.dart';
@@ -10,22 +9,16 @@ class AddOrderCubitBlocBuilder extends StatelessWidget {
   final Widget child;
   @override
   Widget build(BuildContext context) {
-    return BlocConsumer<AddOrderCubit,AddOrderState>(
-      builder:(context , state) {
-        return CustoProgressHUD(
-          isLoading:  state is AddOrderLoading,
-          child: child);
-      },
-
-       listener: (context , state) {
-        if(state is AddOrderSuccess){
-          BuildSnakBar(context, 'تم ت إضافة الطلب بنجاح');
-        }else if(state is AddOrderFaluir){
-          BuildSnakBar(context, state.messege);
-        }
-
-       }
-
-       );
+    return BlocConsumer<AddOrderCubit, AddOrderState>(
+        builder: (context, state) {
+      return CustoProgressHUD(
+          isLoading: state is AddOrderLoading, child: child);
+    }, listener: (context, state) {
+      if (state is AddOrderSuccess) {
+        BuildSnakBar(context, 'تم ت إضافة الطلب بنجاح');
+      } else if (state is AddOrderFaluir) {
+        BuildSnakBar(context, state.messege);
+      }
+    });
   }
 }

@@ -1,14 +1,19 @@
 import 'package:flutter/material.dart';
 
 class CustomCartitemactionbotton extends StatelessWidget {
-  const CustomCartitemactionbotton({super.key, required this.icon, required this.color, required this.onpressed, required this.colorIcon});
+  const CustomCartitemactionbotton(
+      {super.key,
+      required this.icon,
+      required this.color,
+      required this.onpressed,
+      required this.colorIcon});
   final IconData icon;
-  final Color color ,colorIcon;
+  final Color color, colorIcon;
   final VoidCallback onpressed;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap:onpressed ,
+      onTap: onpressed,
       child: Container(
         padding: EdgeInsets.all(2),
         width: 24,
@@ -19,7 +24,11 @@ class CustomCartitemactionbotton extends StatelessWidget {
             borderRadius: BorderRadius.circular(100),
           ),
         ),
-        child: FittedBox(child: Icon(icon,color: colorIcon,)),
+        child: FittedBox(
+            child: Icon(
+          icon,
+          color: colorIcon,
+        )),
       ),
     );
   }

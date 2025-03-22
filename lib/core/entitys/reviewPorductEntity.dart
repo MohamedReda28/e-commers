@@ -12,9 +12,4 @@ class ReviewporductEntity {
     required this.data,
     required this.ratting,
   });
-
-
-
-  
-  
 }

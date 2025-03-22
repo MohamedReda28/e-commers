@@ -10,20 +10,20 @@ class CustomDriverAndOr extends StatelessWidget {
     return const Row(
       children: [
         Expanded(
-          child: Divider(
-            color: Color(0xFFDCDEDE),
-          )
-        ),
+            child: Divider(
+          color: Color(0xFFDCDEDE),
+        )),
         Padding(
-          padding: EdgeInsets.symmetric(horizontal:20),
-          child: Text('أو',style: AppStyle.semibold16,),
+          padding: EdgeInsets.symmetric(horizontal: 20),
+          child: Text(
+            'أو',
+            style: AppStyle.semibold16,
+          ),
         ),
         Expanded(
             child: Divider(
-                color: Color(0xFFDCDEDE),
-            )
-        ),
-
+          color: Color(0xFFDCDEDE),
+        )),
       ],
     );
   }

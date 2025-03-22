@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:fruts_store/core/uitels/App_TextStyle.dart';
 
-
 class FeatureItembotton extends StatelessWidget {
   const FeatureItembotton({super.key, required this.ontap});
-final VoidCallback ontap;
+  final VoidCallback ontap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -19,16 +18,16 @@ final VoidCallback ontap;
           ),
         ),
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24,vertical: 4),
+          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 4),
           child: Text(
             'تسوق الان',
-            style: AppStyle.bold13.copyWith(color:  Color(0xFF1B5E37),),
+            style: AppStyle.bold13.copyWith(
+              color: Color(0xFF1B5E37),
+            ),
             textAlign: TextAlign.center,
           ),
         ),
-
-        ),
-
+      ),
     );
   }
 }

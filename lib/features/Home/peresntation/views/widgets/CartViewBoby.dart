@@ -13,33 +13,38 @@ class Cartviewboby extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children:  [
-        CustomScrollView(
-        slivers:  [
-          SliverToBoxAdapter(child: Column(
-            children: const [
-              SizedBox(height: kTopPadding,),
-              CustomAppbar2(title: 'السلة',visableicon: false,),
-              SizedBox(height: 16,),
-              Massegeincard(),
-              SizedBox(height: 16,),
-             ],
+    return Stack(children: [
+      CustomScrollView(
+        slivers: [
+          SliverToBoxAdapter(
+            child: Column(
+              children: const [
+                SizedBox(
+                  height: kTopPadding,
+                ),
+                CustomAppbar2(
+                  title: 'السلة',
+                  visableicon: false,
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                Massegeincard(),
+                SizedBox(
+                  height: 16,
+                ),
+              ],
             ),
           ),
-          Cartitemlist(cartitems: context.watch<CartCubit>().cartEntity.carsItems),
-
+          Cartitemlist(
+              cartitems: context.watch<CartCubit>().cartEntity.carsItems),
         ],
       ),
-        Positioned(
+      Positioned(
           left: 15,
           right: 15,
-          bottom: MediaQuery.sizeOf(context).height *0.06,
-            child: CastomCartBotton()),
-
-      ]
-    );
+          bottom: MediaQuery.sizeOf(context).height * 0.06,
+          child: CastomCartBotton()),
+    ]);
   }
 }
-
-

@@ -1,5 +1,3 @@
-
-
 import 'package:fruts_store/core/repos/order_repo/order_reop.dart';
 import 'package:fruts_store/core/repos/order_repo/oreder_repo_impl.dart';
 import 'package:fruts_store/core/services/services/DataBase_Serveces.dart';
@@ -14,24 +12,24 @@ import 'firebase_Auth_Servece.dart';
 final getIt = GetIt.instance;
 
 void setupGitit() {
-   getIt.registerSingleton<FirebaseAuthServece>(FirebaseAuthServece());
+  getIt.registerSingleton<FirebaseAuthServece>(FirebaseAuthServece());
 
-   getIt.registerSingleton<DataBaseServeces>(FirestoerServeces());
+  getIt.registerSingleton<DataBaseServeces>(FirestoerServeces());
 
-   getIt.registerSingleton<AuthRepo>(
+  getIt.registerSingleton<AuthRepo>(
     Repoimplemantation(
       firebaseAuthServece: getIt<FirebaseAuthServece>(),
       dataBaseServeces: getIt<DataBaseServeces>(),
     ),
-   );
-   getIt.registerSingleton<ProductRepo>(
-       productRepoImpl(
-         dataBaseServeces: getIt<DataBaseServeces>(),
-       ),
-   );
-   getIt.registerSingleton<OrderRepo>(
-     OrederRepoImpl(
-       dataBaseServeces: getIt<DataBaseServeces>(),
-     ),
-   );
+  );
+  getIt.registerSingleton<ProductRepo>(
+    productRepoImpl(
+      dataBaseServeces: getIt<DataBaseServeces>(),
+    ),
+  );
+  getIt.registerSingleton<OrderRepo>(
+    OrederRepoImpl(
+      dataBaseServeces: getIt<DataBaseServeces>(),
+    ),
+  );
 }

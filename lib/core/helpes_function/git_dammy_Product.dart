@@ -9,7 +9,7 @@ ProductEntity getDummyProduct() {
     code: '12345',
     price: 9.99,
     //image: File(''),
-   /// avgReting: 2.2,
+    /// avgReting: 2.2,
     isFeature: true,
     expirationMonth: 6,
     numberOfCaloric: 95,
@@ -20,13 +20,12 @@ ProductEntity getDummyProduct() {
   );
 }
 
-List<ProductEntity> getDomyProducts(){
+List<ProductEntity> getDomyProducts() {
   return [
     getDummyProduct(),
     getDummyProduct(),
     getDummyProduct(),
     getDummyProduct(),
     getDummyProduct(),
-
   ];
 }

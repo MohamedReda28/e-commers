@@ -10,15 +10,12 @@ class AddOrderCubit extends Cubit<AddOrderState> {
   AddOrderCubit(this.orederRepo) : super(AddOrderInitial());
   final OrderRepo orederRepo;
 
-
-  Future<void> addOrder(OrderEntity orderEntity)async{
+  Future<void> addOrder(OrderEntity orderEntity) async {
     emit(AddOrderLoading());
-     var result = await orederRepo.addOrder(orderEntity);
-     result.fold(
-        (faluir)=> emit(AddOrderFaluir(faluir.message)),
-        (success)=>emit(AddOrderSuccess()),
-     );
- }
-
- 
+    var result = await orederRepo.addOrder(orderEntity);
+    result.fold(
+      (faluir) => emit(AddOrderFaluir(faluir.message)),
+      (success) => emit(AddOrderSuccess()),
+    );
+  }
 }

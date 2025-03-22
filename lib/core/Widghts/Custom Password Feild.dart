@@ -3,9 +3,7 @@ import 'package:flutter/material.dart';
 import 'CustomTextField.dart';
 
 class CustomPasswordFeild extends StatefulWidget {
-  CustomPasswordFeild({
-    super.key,required this.onSaved
-  });
+  CustomPasswordFeild({super.key, required this.onSaved});
   void Function(String?)? onSaved;
 
   @override
@@ -13,7 +11,7 @@ class CustomPasswordFeild extends StatefulWidget {
 }
 
 class _CustomPasswordFeildState extends State<CustomPasswordFeild> {
-  bool obscureText=true;
+  bool obscureText = true;
   @override
   Widget build(BuildContext context) {
     return CustomTextFormField(
@@ -22,12 +20,12 @@ class _CustomPasswordFeildState extends State<CustomPasswordFeild> {
       textInputType: TextInputType.visiblePassword,
       obscureText: obscureText,
       suff: GestureDetector(
-        onTap: (){
-          obscureText=!obscureText;
-          setState(() {
-
-          });
-        },child:obscureText ? Icon(Icons.visibility_off):Icon(Icons.visibility),
+        onTap: () {
+          obscureText = !obscureText;
+          setState(() {});
+        },
+        child:
+            obscureText ? Icon(Icons.visibility_off) : Icon(Icons.visibility),
       ),
     );
   }

@@ -5,10 +5,17 @@ import 'ActiveSippingItemDot.dart';
 import 'InActiveSippingItemDot.dart';
 
 class ShippingItem extends StatelessWidget {
-  const ShippingItem({super.key, required this.title, required this.subtitle, required this.price, required this.isselected, required this.ontap, });
-final String title,subtitle,price;
-final bool isselected;
-final VoidCallback ontap;
+  const ShippingItem({
+    super.key,
+    required this.title,
+    required this.subtitle,
+    required this.price,
+    required this.isselected,
+    required this.ontap,
+  });
+  final String title, subtitle, price;
+  final bool isselected;
+  final VoidCallback ontap;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -26,40 +33,44 @@ final VoidCallback ontap;
           decoration: ShapeDecoration(
             color: Color(0x33D9D9D9),
             shape: RoundedRectangleBorder(
-              side: BorderSide(
-                color: isselected ? AppColor.kPrimaryColor: Colors.transparent,
-              ),
+                side: BorderSide(
+                  color:
+                      isselected ? AppColor.kPrimaryColor : Colors.transparent,
+                ),
                 borderRadius: BorderRadius.circular(4)),
           ),
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              isselected ? ActiveSippingItemDot():InActiveSippingItemDot(),
-              SizedBox(width: 10,),
+              isselected ? ActiveSippingItemDot() : InActiveSippingItemDot(),
+              SizedBox(
+                width: 10,
+              ),
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-
-                children:  [
+                children: [
                   Text(
                     title,
                     style: AppStyle.semibold13,
                   ),
-                  SizedBox(height: 6,),
+                  SizedBox(
+                    height: 6,
+                  ),
                   Text(
                     subtitle,
                     textAlign: TextAlign.right,
-                    style: AppStyle.regular13.copyWith(color: Colors.black.withOpacity(0.5),),
+                    style: AppStyle.regular13.copyWith(
+                      color: Colors.black.withOpacity(0.5),
+                    ),
                   ),
                 ],
               ),
-             Spacer(),
+              Spacer(),
               Center(
-                child: Text(
-                    price,
-                    style: AppStyle.bold13.copyWith(color: AppColor.kPrimaryColor)
-                ),
+                child: Text(price,
+                    style: AppStyle.bold13
+                        .copyWith(color: AppColor.kPrimaryColor)),
               )
-
             ],
           ),
         ),
@@ -67,7 +78,3 @@ final VoidCallback ontap;
     );
   }
 }
-
-
-
-

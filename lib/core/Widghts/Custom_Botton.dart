@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 import '../uitels/App_Color.dart';
 import '../uitels/App_TextStyle.dart';
 
-
 class CustomBotton extends StatelessWidget {
   const CustomBotton({super.key, required this.title, required this.ontap});
   final String title;

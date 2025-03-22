@@ -97,7 +97,6 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
                 texttwo: 'قم نانشاء حساب',
                 ontap: () {
                   Navigator.pushNamed(context, SignUpView.routeName);
-
                 },
               ),
               const SizedBox(

@@ -16,16 +16,16 @@ class ProductModel {
   final int expirationMonth;
   final int numberOfCaloric;
   final int unitAmount;
- // final num avgReting;
-   num ratigCount ;
+  // final num avgReting;
+  num ratigCount;
   final int sellingcount;
   final bool isOrgnic;
 //  final List<ReviewporductModel> reviews;
 
   ProductModel(
       {required this.expirationMonth,
-     // required  this.avgReting,
-      this.ratigCount=0,
+      // required  this.avgReting,
+      this.ratigCount = 0,
       required this.numberOfCaloric,
       required this.unitAmount,
       required this.name,
@@ -34,9 +34,9 @@ class ProductModel {
       required this.sellingcount,
       this.isOrgnic = false,
       required this.price,
-     // required this.image,
+      // required this.image,
       required this.isFeature,
-     // required this.reviews,
+      // required this.reviews,
       this.imageUrl});
 
   factory ProductModel.fromJson(Map<String, dynamic> json) {
@@ -48,22 +48,20 @@ class ProductModel {
       //image: File(json['image']),
       isFeature: json['isFeature'],
       expirationMonth: json['expirationMonth'],
-      numberOfCaloric: json['numberOfCaloric'], 
+      numberOfCaloric: json['numberOfCaloric'],
       isOrgnic: json['isOrgnic'],
       imageUrl: json['imageUrl'],
       sellingcount: json['sellingcount'],
-      unitAmount: json['unitAmount'] !=null ? json['unitAmount'] : 0 ,
+      unitAmount: json['unitAmount'] != null ? json['unitAmount'] : 0,
       // reviews: json['reviews'] != null
       //     ? List<ReviewporductModel>.from(
       //             json['reviews'].map((x) => ReviewporductModel.fromJson(x)))
-              
-      //     : [],
-     //avgReting: getAvgReting(json['reviews']),
 
-     
+      //     : [],
+      //avgReting: getAvgReting(json['reviews']),
     );
   }
- ProductEntity toEntity() {
+  ProductEntity toEntity() {
     return ProductEntity(
       name: name,
       description: description,
@@ -77,7 +75,7 @@ class ProductModel {
       unitAmount: unitAmount,
       isOrgnic: isOrgnic,
       imageUrl: imageUrl,
-     //reviews: reviews.map((e) => e.toEntity()).toList(),
+      //reviews: reviews.map((e) => e.toEntity()).toList(),
     );
   }
 
@@ -94,11 +92,7 @@ class ProductModel {
       'unitAmount': unitAmount,
       'sellingcount': sellingcount,
       'isOrgnic': isOrgnic,
-     // 'reviews': reviews.map((e) => e.toMap()).toList(),
+      // 'reviews': reviews.map((e) => e.toMap()).toList(),
     };
   }
-  
- 
 }
-
-

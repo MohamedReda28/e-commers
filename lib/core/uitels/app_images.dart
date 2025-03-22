@@ -1,7 +1,7 @@
 // ignore_for_file: prefer_single_quotes
 class Assets {
   Assets._();
-  
+
   /// Assets for imagesAppIcon
   /// Assets/Images/App_Icon.svg
   static const String imagesAppIcon = "Assets/Images/App_Icon.svg";
@@ -48,7 +48,8 @@ class Assets {
 
   /// Assets for imagesElementActive3
   /// Assets/Images/elementActive-3.svg
-  static const String imagesElementActive3 = "Assets/Images/elementActive-3.svg";
+  static const String imagesElementActive3 =
+      "Assets/Images/elementActive-3.svg";
 
   /// Assets for imagesFaceBookIcons
   /// Assets/Images/FaceBookIcons.svg
@@ -56,7 +57,8 @@ class Assets {
 
   /// Assets for imagesFeatureItemBackground
   /// Assets/Images/featureItemBackground.svg
-  static const String imagesFeatureItemBackground = "Assets/Images/featureItemBackground.svg";
+  static const String imagesFeatureItemBackground =
+      "Assets/Images/featureItemBackground.svg";
 
   /// Assets for imagesFilrting
   /// Assets/Images/filrting.svg
@@ -100,7 +102,8 @@ class Assets {
 
   /// Assets for imagesPageview1background
   /// Assets/Images/pageview1background.svg
-  static const String imagesPageview1background = "Assets/Images/pageview1background.svg";
+  static const String imagesPageview1background =
+      "Assets/Images/pageview1background.svg";
 
   /// Assets for imagesPageview1mage
   /// Assets/Images/pageview1mage.svg
@@ -108,7 +111,8 @@ class Assets {
 
   /// Assets for imagesPageview2background
   /// Assets/Images/pageview2background.svg
-  static const String imagesPageview2background = "Assets/Images/pageview2background.svg";
+  static const String imagesPageview2background =
+      "Assets/Images/pageview2background.svg";
 
   /// Assets for imagesPageview2image
   /// Assets/Images/pageview2image.svg
@@ -124,7 +128,8 @@ class Assets {
 
   /// Assets for imagesShoppingCartActive
   /// Assets/Images/shopping-cartActive.svg
-  static const String imagesShoppingCartActive = "Assets/Images/shopping-cartActive.svg";
+  static const String imagesShoppingCartActive =
+      "Assets/Images/shopping-cartActive.svg";
 
   /// Assets for imagesStrobary
   /// Assets/Images/strobary.svg
@@ -150,4 +155,3 @@ class Assets {
   /// Assets/Images/watermelon-png.jpg
   static const String imagesWatermelonPng = "Assets/Images/watermelon-png.jpg";
 }
-

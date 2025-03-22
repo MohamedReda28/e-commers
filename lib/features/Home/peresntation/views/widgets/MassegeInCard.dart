@@ -24,7 +24,7 @@ class Massegeincard extends StatelessWidget {
           Text(
             'لديك ${context.watch<CartCubit>().cartEntity.carsItems.length} منتجات في سله التسوق',
             style: AppStyle.bold13.copyWith(
-              color:  const Color(0xFF1B5E37),
+              color: const Color(0xFF1B5E37),
             ),
           ),
         ],

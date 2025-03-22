@@ -18,29 +18,22 @@ class MainView extends StatefulWidget {
 }
 
 class _MainViewState extends State<MainView> {
-  int currintindex=0;
+  int currintindex = 0;
   @override
   Widget build(BuildContext context) {
-
-
     return BlocProvider(
-      create: (context)=>CartCubit(),
+      create: (context) => CartCubit(),
       child: Scaffold(
         bottomNavigationBar: Custombottonnavigationbar(
           changed: (index) {
-           currintindex=index;
-           setState(() {});
+            currintindex = index;
+            setState(() {});
           },
         ),
-        body:  SafeArea(
+        body: SafeArea(
           child: MainViewBodyBlocConsumer(currintindex: currintindex),
         ),
       ),
     );
-
-
   }
 }
-
-
-

@@ -8,14 +8,13 @@ sealed class AddOrderState extends Equatable {
 }
 
 final class AddOrderInitial extends AddOrderState {}
-final class AddOrderLoading extends AddOrderState {}
-final class AddOrderSuccess extends AddOrderState {}
-final class AddOrderFaluir extends AddOrderState {
 
+final class AddOrderLoading extends AddOrderState {}
+
+final class AddOrderSuccess extends AddOrderState {}
+
+final class AddOrderFaluir extends AddOrderState {
   final String messege;
 
   AddOrderFaluir(this.messege);
 }
-
-
-

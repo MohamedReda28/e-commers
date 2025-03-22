@@ -9,13 +9,10 @@ final class ProductCubitLoading extends ProductState {}
 
 final class ProductCubitFailure extends ProductState {
   final String message;
-   ProductCubitFailure(this.message);
+  ProductCubitFailure(this.message);
 }
 
 final class ProductCubitSuccess extends ProductState {
   final List<ProductEntity> products;
-  ProductCubitSuccess( this.products);
-  }  
-
-
-
+  ProductCubitSuccess(this.products);
+}

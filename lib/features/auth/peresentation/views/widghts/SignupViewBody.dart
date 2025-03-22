@@ -80,12 +80,10 @@ class _SignupViewBodyState extends State<SignupViewBody> {
                           .read<SignupCubit>()
                           .CreateUserWithEmailAndPassword(
                               email, password, name);
-
                     } else {
                       BuildSnakBar(context, 'يجب الموافقه علي الشروط والاحكام');
                     }
                   } else {
-
                     setState(() {
                       autoValidateMode = AutovalidateMode.always;
                     });

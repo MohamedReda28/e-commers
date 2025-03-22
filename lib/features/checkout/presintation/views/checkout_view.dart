@@ -11,25 +11,36 @@ import '../../../../core/Widghts/BuildAppBarCustom.dart';
 import '../../../../core/helpes_function/getUser.dart';
 import '../../../Home/domines/entites/CardEntity.dart';
 
-class Checkout_View extends StatelessWidget {
+class Checkout_View extends StatefulWidget {
   const Checkout_View({super.key, required this.cartItems});
   static const routeName = 'shipping';
   final CartEntity cartItems;
 
   @override
+  State<Checkout_View> createState() => _Checkout_ViewState();
+}
+
+class _Checkout_ViewState extends State<Checkout_View> {
+  late OrderEntity orderEntity;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    orderEntity =OrderEntity(
+      cartList: widget.cartItems,
+      uID: getUser().uid,
+    );
+  }
+  @override
   Widget build(BuildContext context) {
     return BlocProvider(
-
       create: (BuildContext context) => AddOrderCubit(getIt<OrderRepo>()),
       child: Scaffold(
-        appBar: buildAppBar(context,title: 'الشحن'),
+        appBar: buildAppBar(context, title: 'الشحن'),
         body: SafeArea(
-            child: Provider.value(
-              value: OrderEntity(
-                cartList:cartItems,
-                uID: getUser().uid,
-              ),
-                child: AddOrderCubitBlocBuilder(child: Checkout_View_Body())),
+          child: Provider.value(
+              value: orderEntity,
+              child: AddOrderCubitBlocBuilder(child: Checkout_View_Body())),
         ),
       ),
     );

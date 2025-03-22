@@ -3,18 +3,18 @@ import 'dart:io';
 import 'package:equatable/equatable.dart';
 import 'package:fruts_store/core/entitys/reviewPorductEntity.dart';
 
-class ProductEntity extends Equatable{
+class ProductEntity extends Equatable {
   final String name;
   final String description;
   final String code;
   final num price;
- // final File image;
+  // final File image;
   final bool isFeature;
   String? imageUrl;
   final int expirationMonth;
   final int numberOfCaloric;
   final int unitAmount;
- // final num avgReting;
+  // final num avgReting;
   final num ratigCount = 0;
   final bool isOrgnic;
   //final List<ReviewporductEntity> reviews;
@@ -22,8 +22,8 @@ class ProductEntity extends Equatable{
   ProductEntity(
       {required this.name,
       required this.expirationMonth,
-    //  required this.avgReting,
-     // required this.reviews,
+      //  required this.avgReting,
+      // required this.reviews,
       required this.numberOfCaloric,
       required this.unitAmount,
       required this.description,

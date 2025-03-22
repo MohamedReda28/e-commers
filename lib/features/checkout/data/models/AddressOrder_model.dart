@@ -1,20 +1,22 @@
-
 import 'package:fruts_store/features/checkout/domines/entitys/Address_OrderEntity.dart';
 
-class AddressOrderModel{
+class AddressOrderModel {
+  String? name;
+  String? address;
+  String? phone;
+  String? email;
+  String? city;
+  String? addressDetels;
 
-   String? name;
-   String? address;
-   String? phone;
-   String? email;
-   String? city;
-   String? addressDetels;
+  AddressOrderModel(
+      {this.name,
+      this.address,
+      this.phone,
+      this.email,
+      this.city,
+      this.addressDetels});
 
-  AddressOrderModel({ this.name,  this.address,  this.phone,  this.email,  this.city,  this.addressDetels});
-
-
-
-  factory AddressOrderModel.fromEntity(AddressOrderentity addressOrderentity){
+  factory AddressOrderModel.fromEntity(AddressOrderentity addressOrderentity) {
     return AddressOrderModel(
       name: addressOrderentity.name,
       address: addressOrderentity.address,
@@ -22,11 +24,10 @@ class AddressOrderModel{
       email: addressOrderentity.email,
       city: addressOrderentity.city,
       addressDetels: addressOrderentity.addressDetels,
-   );
+    );
   }
 
-
-  toJson(){
+  toJson() {
     return {
       'name': name,
       'address': address,
@@ -34,8 +35,6 @@ class AddressOrderModel{
       'email': email,
       'city': city,
       'addressDetels': addressDetels,
-      };
+    };
   }
-
-  
 }

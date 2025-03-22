@@ -24,9 +24,7 @@ class _OnBordViewBodyState extends State<OnBordViewBody> {
     pageController = PageController();
     pageController.addListener(() {
       currntPage = pageController.page!.round();
-      setState(() {
-
-      });
+      setState(() {});
     });
     super.initState();
   }
@@ -39,14 +37,19 @@ class _OnBordViewBodyState extends State<OnBordViewBody> {
 
   @override
   Widget build(BuildContext context) {
-    return   Column(
+    return Column(
       children: [
-        Expanded(child: OnBord_Page_View(pageController: pageController,)),
+        Expanded(
+            child: OnBord_Page_View(
+          pageController: pageController,
+        )),
         DotsIndicator(
           dotsCount: 2,
           decorator: DotsDecorator(
             activeColor: AppColor.kPrimaryColor,
-            color:currntPage==0? AppColor.kPrimaryColor.withOpacity(0.5):AppColor.kPrimaryColor,
+            color: currntPage == 0
+                ? AppColor.kPrimaryColor.withOpacity(0.5)
+                : AppColor.kPrimaryColor,
           ),
         ),
         const SizedBox(
@@ -56,13 +59,12 @@ class _OnBordViewBodyState extends State<OnBordViewBody> {
           maintainSize: true,
           maintainAnimation: true,
           maintainState: true,
-          visible: currntPage==1,
+          visible: currntPage == 1,
           child: CustomBotton(
             title: 'ابدأ الان',
             ontap: () {
               SharPref.setBool(kIsBordingViewSeen, true);
               Navigator.of(context).pushReplacementNamed(SiginView.routeName);
-
             },
           ),
         ),

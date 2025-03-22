@@ -9,4 +9,3 @@ void BuildSnakBar(BuildContext context, String messege) {
     ),
   );
 }
-

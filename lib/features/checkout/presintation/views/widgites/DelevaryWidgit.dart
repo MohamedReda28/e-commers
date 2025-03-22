@@ -6,34 +6,40 @@ import 'Payment_Item.dart';
 
 class Delevarywidgit extends StatelessWidget {
   const Delevarywidgit({super.key, required this.pageController});
- final PageController pageController;
+  final PageController pageController;
   @override
   Widget build(BuildContext context) {
-    return PaymentItem(title: 'عنوان التوصيل',
+    return PaymentItem(
+      title: 'عنوان التوصيل',
       child: Row(
         children: [
           Icon(Icons.location_on_outlined),
-          SizedBox(width: 8,),
-          Text(
-              context.read<OrderEntity>().addressOrderentity.toStringg(),
-              style: AppStyle.regular16.copyWith(color: Color(0xFF4E5556),)
+          SizedBox(
+            width: 8,
           ),
+          Text(context.read<OrderEntity>().addressOrderentity.toStringg(),
+              style: AppStyle.regular16.copyWith(
+                color: Color(0xFF4E5556),
+              )),
           Spacer(),
           Row(
             children: [
               Icon(Icons.edit),
-              SizedBox(width: 8,),
+              SizedBox(
+                width: 8,
+              ),
               GestureDetector(
-                onTap: (){
-                  pageController.animateToPage(pageController.page!.toInt()-1,
-                      duration: Duration(milliseconds: 300),
-                      curve: Curves.easeIn,
+                onTap: () {
+                  pageController.animateToPage(
+                    pageController.page!.toInt() - 1,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeIn,
                   );
                 },
-                child: Text(
-                    'تعديل',
-                    style: AppStyle.semibold13.copyWith(color: Color(0xFF949D9E),)
-                ),
+                child: Text('تعديل',
+                    style: AppStyle.semibold13.copyWith(
+                      color: Color(0xFF949D9E),
+                    )),
               )
             ],
           )

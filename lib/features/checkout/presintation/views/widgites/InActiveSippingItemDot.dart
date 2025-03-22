@@ -11,7 +11,7 @@ class InActiveSippingItemDot extends StatelessWidget {
       decoration: ShapeDecoration(
         color: Colors.transparent,
         shape: OvalBorder(
-          side: BorderSide(width: 1, color:Color(0xFF949D9E)),
+          side: BorderSide(width: 1, color: Color(0xFF949D9E)),
         ),
       ),
     );

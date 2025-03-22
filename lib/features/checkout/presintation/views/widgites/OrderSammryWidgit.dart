@@ -11,16 +11,16 @@ class Ordersammrywidgit extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return  PaymentItem(title: 'ملخص الطلب',
+    return PaymentItem(
+      title: 'ملخص الطلب',
       child: Column(
-        children:  [
-          SizedBox(height: 16,),
+        children: [
+          SizedBox(
+            height: 16,
+          ),
           Row(
             children: [
-              Text(
-                  'المجموع الفرعي :',
-                  style: AppStyle.regular13
-              ),
+              Text('المجموع الفرعي :', style: AppStyle.regular13),
               Spacer(),
               Text(
                 '${context.read<OrderEntity>().cartList.CalculteTotlePrice()} جنيه',
@@ -28,13 +28,12 @@ class Ordersammrywidgit extends StatelessWidget {
               )
             ],
           ),
-          SizedBox(height: 8,),
+          SizedBox(
+            height: 8,
+          ),
           Row(
             children: const [
-              Text(
-                  'التوصيل  :',
-                  style: AppStyle.regular13
-              ),
+              Text('التوصيل  :', style: AppStyle.regular13),
               Spacer(),
               Text(
                 '${kpriceDelivary} جنيه',
@@ -42,24 +41,24 @@ class Ordersammrywidgit extends StatelessWidget {
               )
             ],
           ),
-          Divider(height:18, thickness: .5,color: Color(0xFFCACECE),),
+          Divider(
+            height: 18,
+            thickness: .5,
+            color: Color(0xFFCACECE),
+          ),
           Row(
-            children:  [
-              Text(
-                  'الكلي',
-                  style: AppStyle.bold16
-              ),
+            children: [
+              Text('الكلي', style: AppStyle.bold16),
               Spacer(),
               Text(
-                '${(context.read<OrderEntity>().cartList.CalculteTotlePrice())+kpriceDelivary} جنيه',
+                '${(context.read<OrderEntity>().cartList.CalculteTotlePrice()) + kpriceDelivary} جنيه',
                 style: AppStyle.bold16,
               )
             ],
           ),
-          SizedBox(height: 16,),
-
-
-
+          SizedBox(
+            height: 16,
+          ),
         ],
       ),
     );

@@ -1,4 +1,3 @@
-
 import '../entitys/reviewPorductEntity.dart';
 
 class ReviewporductModel {
@@ -33,18 +32,16 @@ class ReviewporductModel {
       image: json['image'],
       data: json['data'],
       ratting: json['ratting'],
-      );
-
-      
+    );
   }
-  ReviewporductEntity toEntity(){
+  ReviewporductEntity toEntity() {
     return ReviewporductEntity(
-      name: name, 
+      name: name,
       revdescription: revdescription,
-       image: image,
-       data: data,
-       ratting: ratting,
-       );
+      image: image,
+      data: data,
+      ratting: ratting,
+    );
   }
 
   toMap() {

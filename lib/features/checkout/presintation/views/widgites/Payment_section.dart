@@ -10,15 +10,19 @@ class PaymentSection extends StatelessWidget {
   final PageController pageController;
   @override
   Widget build(BuildContext context) {
-        return Column(
-          children:   [
-            SizedBox(height: 24,),
-            Ordersammrywidgit(),
-            SizedBox(height: 24,),
-            Delevarywidgit(
-              pageController:pageController,
-            ),
-          ],
-        );
+    return Column(
+      children: [
+        SizedBox(
+          height: 24,
+        ),
+        Ordersammrywidgit(),
+        SizedBox(
+          height: 24,
+        ),
+        Delevarywidgit(
+          pageController: pageController,
+        ),
+      ],
+    );
   }
 }

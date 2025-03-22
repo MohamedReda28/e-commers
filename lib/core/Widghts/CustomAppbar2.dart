@@ -6,9 +6,13 @@ import '../uitels/app_images.dart';
 import 'CustomNotifcation.dart';
 
 class CustomAppbar2 extends StatelessWidget {
-  const CustomAppbar2({super.key, required this.title,  this.visableArw=true,  this.visableicon=true});
-final String title;
- final bool visableArw,visableicon;
+  const CustomAppbar2(
+      {super.key,
+      required this.title,
+      this.visableArw = true,
+      this.visableicon = true});
+  final String title;
+  final bool visableArw, visableicon;
 
   @override
   Widget build(BuildContext context) {
@@ -24,15 +28,9 @@ final String title;
             child: SvgPicture.asset(Assets.imagesArrowBack),
           ),
         ),
-        Text(title,style:AppStyle.bold19),
-
-        Visibility(
-          visible: visableicon,
-            child: const CustomNotifcation()),
+        Text(title, style: AppStyle.bold19),
+        Visibility(visible: visableicon, child: const CustomNotifcation()),
       ],
     );
   }
 }
-
-
-

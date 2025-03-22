@@ -13,9 +13,9 @@ class ProdutsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context)=>ProductCubit(
-        getIt<ProductRepo>(),
-      ),
+        create: (context) => ProductCubit(
+              getIt<ProductRepo>(),
+            ),
         child: ProdutViewBody());
   }
 }

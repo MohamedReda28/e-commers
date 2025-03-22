@@ -11,39 +11,44 @@ class ScetionShipping extends StatefulWidget {
   State<ScetionShipping> createState() => _ScetionShippingState();
 }
 
-class _ScetionShippingState extends State<ScetionShipping> with AutomaticKeepAliveClientMixin {
-   int selectindex=0;
+class _ScetionShippingState extends State<ScetionShipping>
+    with AutomaticKeepAliveClientMixin {
+  int selectindex = 0;
   @override
   Widget build(BuildContext context) {
     super.build(context);
     return Column(
-      children:  [
-        SizedBox(height: 33,),
+      children: [
+        SizedBox(
+          height: 33,
+        ),
         ShippingItem(
-          isselected: selectindex==1,
-          title: 'الدفع عند الاستلام', subtitle: 'التسليم من المكان',
-          price: '${(context.read<OrderEntity>().cartList.CalculteTotlePrice())+kpriceDelivary}',
+          isselected: selectindex == 1,
+          title: 'الدفع عند الاستلام',
+          subtitle: 'التسليم من المكان',
+          price:
+              '${(context.read<OrderEntity>().cartList.CalculteTotlePrice()) + kpriceDelivary}',
           ontap: () {
-            selectindex =1;
-            context.read<OrderEntity>().paywithCash= true;
-            setState(() {
-            });
-          },),
-        SizedBox(height: 16,),
-        ShippingItem(
-          ontap: (){
-            selectindex =2;
-            context.read<OrderEntity>().paywithCash= false;
-
-            setState(() {
-            });
+            selectindex = 1;
+            context.read<OrderEntity>().paywithCash = true;
+            setState(() {});
           },
-          isselected: selectindex==2,
+        ),
+        SizedBox(
+          height: 16,
+        ),
+        ShippingItem(
+          ontap: () {
+            selectindex = 2;
+            context.read<OrderEntity>().paywithCash = false;
+
+            setState(() {});
+          },
+          isselected: selectindex == 2,
           title: 'الدفع اونلاين',
           subtitle: 'يرجي تحديد طريقه الدفع',
           price: '${context.read<OrderEntity>().cartList.CalculteTotlePrice()}',
         ),
-
       ],
     );
   }

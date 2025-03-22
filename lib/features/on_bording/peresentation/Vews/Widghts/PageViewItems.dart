@@ -8,14 +8,13 @@ import '../../../../../core/services/services/shardpreferance_Singlton.dart';
 import '../../../../../core/uitels/App_TextStyle.dart';
 
 class PageViewItem extends StatelessWidget {
-  const PageViewItem({
-    super.key,
-    required this.subtitle,
-    required this.image,
-    required this.title,
-    required this.backgroundColor,
-    required this.isVisibilty
-  });
+  const PageViewItem(
+      {super.key,
+      required this.subtitle,
+      required this.image,
+      required this.title,
+      required this.backgroundColor,
+      required this.isVisibilty});
 
   final String subtitle, image, backgroundColor;
   final Widget title;
@@ -43,14 +42,17 @@ class PageViewItem extends StatelessWidget {
               ),
               Visibility(
                 visible: isVisibilty,
-                child:  GestureDetector(
-                  onTap: (){
+                child: GestureDetector(
+                  onTap: () {
                     SharPref.setBool(kIsBordingViewSeen, true);
-                   // Navigator.of(context).pushReplacementNamed(SiginView.routeName);
+                    // Navigator.of(context).pushReplacementNamed(SiginView.routeName);
                   },
                   child: const Padding(
                     padding: EdgeInsets.all(8.0),
-                    child: Text('تخطي',style: AppStyle.regular13,),
+                    child: Text(
+                      'تخطي',
+                      style: AppStyle.regular13,
+                    ),
                   ),
                 ),
               ),
@@ -69,7 +71,7 @@ class PageViewItem extends StatelessWidget {
           child: Text(
             subtitle,
             textAlign: TextAlign.center,
-            style:AppStyle.semibold13 ,
+            style: AppStyle.semibold13,
           ),
         ),
       ],

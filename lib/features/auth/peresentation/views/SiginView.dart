@@ -10,7 +10,6 @@ import '../../../../core/services/services/git_it_Service.dart';
 import '../../domain/repos/Auth Repo.dart';
 import '../cubits/Signin_Cubit/cubit/signin_cubit.dart';
 
-
 class SiginView extends StatelessWidget {
   const SiginView({super.key});
   static const routeName = 'SiginView';
@@ -33,7 +32,7 @@ class SiginView extends StatelessWidget {
               }
             },
             builder: (context, state) => CustoProgressHUD(
-             isLoading: state is SigninLoading ? true:false,
+              isLoading: state is SigninLoading ? true : false,
               child: SiginVeiwBody(),
             ),
           );
@@ -42,4 +41,3 @@ class SiginView extends StatelessWidget {
     );
   }
 }
-

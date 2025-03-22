@@ -27,15 +27,14 @@ class SignUpView extends StatelessWidget {
           return BlocConsumer<SignupCubit, SignupState>(
             listener: (context, state) {
               if (state is SignupSuccess) {
-                BuildSnakBar(context, 'تم انشاء حساب' );
-
+                BuildSnakBar(context, 'تم انشاء حساب');
               }
-              if(state is SignupFailure){
-                BuildSnakBar(context, state.message );
+              if (state is SignupFailure) {
+                BuildSnakBar(context, state.message);
               }
             },
             builder: (context, state) => CustoProgressHUD(
-             isLoading: state is SigninLoading ? true:false,
+              isLoading: state is SigninLoading ? true : false,
               child: SignupViewBody(),
             ),
           );
@@ -43,6 +42,4 @@ class SignUpView extends StatelessWidget {
       ),
     );
   }
-
-  
 }

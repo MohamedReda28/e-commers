@@ -25,28 +25,41 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     context.read<ProductCubit>().getBestSellingProduct();
     super.initState();
   }
+
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
       child: CustomScrollView(
         slivers: [
-          SliverToBoxAdapter(child: Column(
-            children: [
-              const SizedBox(height: kTopPadding,),
-              const CustomHomeAppbar(),
-              const SizedBox(height: 16,),
-              const CustomTextFiledForSearch(),
-              const SizedBox(height: 12,),
-              const ListfeatureitemFeature(),
-              const SizedBox(height: 7,),
-              Custombestsalar(ontap: () {
-
-                Navigator.of(context).pushNamed(BestSallingView.routeName);
-              },),
-              const SizedBox(height: 8,),
-            ],
-          ),
+          SliverToBoxAdapter(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: kTopPadding,
+                ),
+                const CustomHomeAppbar(),
+                const SizedBox(
+                  height: 16,
+                ),
+                const CustomTextFiledForSearch(),
+                const SizedBox(
+                  height: 12,
+                ),
+                const ListfeatureitemFeature(),
+                const SizedBox(
+                  height: 7,
+                ),
+                Custombestsalar(
+                  ontap: () {
+                    Navigator.of(context).pushNamed(BestSallingView.routeName);
+                  },
+                ),
+                const SizedBox(
+                  height: 8,
+                ),
+              ],
+            ),
           ),
           ProductsGridviewBlocBuilder(),
         ],
@@ -54,5 +67,3 @@ class _HomeViewBodyState extends State<HomeViewBody> {
     );
   }
 }
-
-

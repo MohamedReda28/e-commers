@@ -10,47 +10,38 @@ class productRepoImpl implements ProductRepo {
   final DataBaseServeces dataBaseServeces;
   productRepoImpl({required this.dataBaseServeces});
   @override
-  Future<Either<Failur, List<ProductEntity>>> getBestSellingProduct() async{
+  Future<Either<Failur, List<ProductEntity>>> getBestSellingProduct() async {
     try {
-  var data = await dataBaseServeces.getData(path: BackEndImpoint.getproducts,
-    query: {
-    'limit':10,
-    'orderBy':'sellingcount', 
-    'descending':true,
+      var data = await dataBaseServeces
+          .getData(path: BackEndImpoint.getproducts, query: {
+        'limit': 10,
+        'orderBy': 'sellingcount',
+        'descending': true,
+      }) as List<Map<String, dynamic>>;
+
+      List<ProductModel> products =
+          data.map((e) => ProductModel.fromJson(e)).toList();
+      List<ProductEntity> productEntit =
+          products.map((e) => e.toEntity()).toList();
+      return right(productEntit);
+    } catch (e) {
+      return left(ServerFailure('Failed to load products'));
     }
-  )
-     as List<Map<String, dynamic>>;
-  
-  List<ProductModel> products =
-      data.map((e) => ProductModel.fromJson(e)).toList();
-  List<ProductEntity> productEntit =
-      products.map((e) => e.toEntity()).toList();
-  return right(productEntit);
-}  catch (e) {
-  return left(ServerFailure('Failed to load products'));
-}
   }
 
   @override
   Future<Either<Failur, List<ProductEntity>>> getProduct() async {
     try {
-  var data = await dataBaseServeces.getData(path: BackEndImpoint.getproducts)
-      as List<Map<String, dynamic>>;
-  
-  List<ProductModel> products =
-      data.map((e) => ProductModel.fromJson(e)).toList();
-  List<ProductEntity> productEntit =
-      products.map((e) => e.toEntity()).toList();
-  return right(productEntit);
-}  catch (e) {
-  return left(ServerFailure('Failed to load products'));
-}
+      var data = await dataBaseServeces.getData(
+          path: BackEndImpoint.getproducts) as List<Map<String, dynamic>>;
+
+      List<ProductModel> products =
+          data.map((e) => ProductModel.fromJson(e)).toList();
+      List<ProductEntity> productEntit =
+          products.map((e) => e.toEntity()).toList();
+      return right(productEntit);
+    } catch (e) {
+      return left(ServerFailure('Failed to load products'));
+    }
   }
 }
-
-
-  
-
-
-
-

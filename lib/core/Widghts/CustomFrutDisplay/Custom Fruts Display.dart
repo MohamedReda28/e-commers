@@ -9,9 +9,11 @@ import '../../uitels/app_images.dart';
 import '../custom Url image.dart';
 import 'RichTextforSubtitle.dart';
 
-
 class CustomFrutDisplay extends StatelessWidget {
-  const CustomFrutDisplay ({super.key, required this.productEntity,});
+  const CustomFrutDisplay({
+    super.key,
+    required this.productEntity,
+  });
   final ProductEntity productEntity;
 
   @override
@@ -20,48 +22,57 @@ class CustomFrutDisplay extends StatelessWidget {
       decoration: ShapeDecoration(
         color: const Color(0xFFF3F5F7),
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(4)),
-      ),child: Stack(
-      children: [
-        Positioned(
-          top: 0,
+      ),
+      child: Stack(
+        children: [
+          Positioned(
+            top: 0,
             right: 0,
-            child: IconButton(onPressed: (){}, icon: const Icon(Icons.favorite_border_outlined),),),
-        Positioned.fill(
-          child: Column(
-            children: [
-              const SizedBox(height: 20,),
-              CustomNetworkImage(imageUrl: productEntity.imageUrl!,),
-              const SizedBox(height: 5,),
-              ListTile(
-                title: Text(
-                  productEntity.name,
-                  textAlign: TextAlign.right,
-                  style: AppStyle.semibold13.copyWith(color: const Color(0xFF0C0D0D),),
+            child: IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.favorite_border_outlined),
+            ),
+          ),
+          Positioned.fill(
+            child: Column(
+              children: [
+                const SizedBox(
+                  height: 20,
                 ),
-
-                subtitle:  FittedBox(child: RichTextforSubtitle(productEntity: productEntity)),
-
-                trailing:GestureDetector(
-                  onTap: (){
-                    context.read<CartCubit>().AddProduct(productEntity);
-                  },
-                  child: const CircleAvatar(
-                  
-                    backgroundColor: Color(0xFF1B5E37),
-                  
-                    child: Icon(Icons.add,color: Colors.white,),
+                CustomNetworkImage(
+                  imageUrl: productEntity.imageUrl!,
+                ),
+                const SizedBox(
+                  height: 5,
+                ),
+                ListTile(
+                  title: Text(
+                    productEntity.name,
+                    textAlign: TextAlign.right,
+                    style: AppStyle.semibold13.copyWith(
+                      color: const Color(0xFF0C0D0D),
+                    ),
+                  ),
+                  subtitle: FittedBox(
+                      child: RichTextforSubtitle(productEntity: productEntity)),
+                  trailing: GestureDetector(
+                    onTap: () {
+                      context.read<CartCubit>().AddProduct(productEntity);
+                    },
+                    child: const CircleAvatar(
+                      backgroundColor: Color(0xFF1B5E37),
+                      child: Icon(
+                        Icons.add,
+                        color: Colors.white,
+                      ),
+                    ),
                   ),
                 ),
-              ),
-
-            ],
+              ],
+            ),
           ),
-        ),
-
-       ],
-           ),
+        ],
+      ),
     );
   }
 }
-
-

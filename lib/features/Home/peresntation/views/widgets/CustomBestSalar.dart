@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:fruts_store/core/uitels/App_TextStyle.dart';
 
 class Custombestsalar extends StatelessWidget {
-  const Custombestsalar({super.key, required this.ontap,});
+  const Custombestsalar({
+    super.key,
+    required this.ontap,
+  });
   final VoidCallback ontap;
   @override
   Widget build(BuildContext context) {
