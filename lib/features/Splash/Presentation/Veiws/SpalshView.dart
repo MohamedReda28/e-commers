@@ -18,7 +18,7 @@ class SplashVeiw extends StatefulWidget {
 class _SplashVeiwState extends State<SplashVeiw> {
   @override
   void initState() {
-    excutNavigation();
+   excutNavigation();
     super.initState();
   }
 

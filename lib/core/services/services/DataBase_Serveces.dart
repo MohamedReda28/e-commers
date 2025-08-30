@@ -1,4 +1,3 @@
-import 'package:fruts_store/features/auth/domain/entites/User%20entites.dart';
 
 abstract class DataBaseServeces {
   //خلي بالك هنا انت بتعمل خدمه لاي حاجه بيتعملها ارسال ل قاعده البيانات

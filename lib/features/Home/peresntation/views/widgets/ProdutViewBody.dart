@@ -16,7 +16,7 @@ class ProdutViewBody extends StatefulWidget {
 
 class _ProdutViewBodyState extends State<ProdutViewBody> {
   void initState() {
-    context.read<ProductCubit>().getBestSellingProduct();
+    context.read<ProductCubit>().getProducts();
     super.initState();
   }
 
@@ -45,7 +45,7 @@ class _ProdutViewBodyState extends State<ProdutViewBody> {
                   height: 12,
                 ),
                 ProdutviewResult(
-                    productleanth: context.read<ProductCubit>().productleanth),
+                    productleanth: context.read<ProductCubit>().productleanth!),
                 const SizedBox(
                   height: 12,
                 ),

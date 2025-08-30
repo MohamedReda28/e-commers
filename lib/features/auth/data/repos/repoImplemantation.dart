@@ -9,7 +9,7 @@ import 'package:fruts_store/core/uitels/backend%20Impoint.dart';
 import '../../../../core/erroes/Failur.dart';
 import '../../../../core/erroes/excaptins.dart';
 import '../../../../core/services/services/firebase_Auth_Servece.dart';
-import '../../domain/entites/User entites.dart';
+import '../../domain/entites/User_Entites.dart';
 import '../../domain/repos/Auth Repo.dart';
 import '../Models/UserModel.dart';
 
@@ -119,7 +119,7 @@ class Repoimplemantation extends AuthRepo {
   }
 
   @override
-  Future addUserData({required UserEntity user}) async {
+  Future  addUserData({required UserEntity user}) async {
     await dataBaseServeces.addData(
       path: BackEndImpoint.addUserData,
       data: UserModel.fromEntity(user).toMap(),
@@ -138,5 +138,19 @@ class Repoimplemantation extends AuthRepo {
   Future saveUserData({required UserEntity user}) async {
     var jsonData = jsonEncode(UserModel.fromEntity(user).toMap());
     await SharPref.setString(kUserData, jsonData);
+
+  }
+
+  @override
+  Future<Either<Failur, void>> sendPasswordResetEmail({required String email}) async{
+    try{
+      await firebaseAuthServece.sendPasswordResetEmail(email: email);
+      return right(null);
+    }on CustomException catch (e) {
+      return left(ServerFailure(e.message));
+    } catch (e) {
+      log('Excaption in sendPasswordResetEmail. ${e.toString()}');
+      return left(ServerFailure(e.toString()));
+    }
   }
 }

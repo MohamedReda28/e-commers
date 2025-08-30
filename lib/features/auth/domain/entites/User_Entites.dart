@@ -1,4 +1,6 @@
-class UserEntity {
+import 'package:hive/hive.dart';
+
+class UserEntity  {
   final String name;
   final String email;
   final String uid;

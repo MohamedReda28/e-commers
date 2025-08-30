@@ -64,6 +64,25 @@ class _Checkout_View_BodyState extends State<Checkout_View_Body> {
           CustombottonnavigationTapbar(
             pageController: pageController,
             currentPageActive: currentPageActive,
+            ontap: (index) {
+              var orderentity = context.read<OrderInputEntity>();
+              if(index==0){
+                pageController.animateToPage(index,
+                    duration: Duration(milliseconds: 300),
+                    curve: Curves.easeIn);
+              }
+              else if (index==1){
+                if(orderentity.paywithCash!=null){
+                  pageController.animateToPage(index,
+                      duration: Duration(milliseconds: 300),
+                      curve: Curves.easeIn);
+                }else {
+                  BuildSnakBar(context, 'اختار طريقه الدفع');
+                }
+             }else{
+                addressSection_Validation();
+              }
+            }
           ),
           Expanded(
             child: Checkout_Steps_Listview(
@@ -80,7 +99,7 @@ class _Checkout_View_BodyState extends State<Checkout_View_Body> {
                 } else if (currentPageActive == 1) {
                   addressSection_Validation();
                 } else {
-                  var orderEntity = context.read<OrderEntity>();
+                  var orderEntity = context.read<OrderInputEntity>();
                   context.read<AddOrderCubit>().addOrder(orderEntity);
                   //processpayment(context);
                 }
@@ -92,7 +111,7 @@ class _Checkout_View_BodyState extends State<Checkout_View_Body> {
   }
 
   void shippingSection_Validation(BuildContext context) {
-    if (context.read<OrderEntity>().paywithCash != null) {
+    if (context.read<OrderInputEntity>().paywithCash != null) {
       pageController.animateToPage(currentPageActive + 1,
           duration: Duration(milliseconds: 300), curve: Curves.easeIn);
     } else {
@@ -111,7 +130,7 @@ class _Checkout_View_BodyState extends State<Checkout_View_Body> {
   }
 
   void processpayment(BuildContext context) {
-    var orderEntity = context.read<OrderEntity>();
+    var orderEntity = context.read<OrderInputEntity>();
     PaypalPaymentEntity paypalPaymentEntity =  PaypalPaymentEntity.fromEntity(orderEntity);
     var ordercubit=context.read<AddOrderCubit>();
     log (paypalPaymentEntity.toJson().toString());

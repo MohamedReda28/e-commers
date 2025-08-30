@@ -5,16 +5,20 @@ import 'package:meta/meta.dart';
 part 'product_cubit_state.dart';
 
 class ProductCubit extends Cubit<ProductState> {
-  ProductCubit(this.productRepo) : super(ProductCubitInitial());
+  ProductCubit(this.productRepo,) : super(ProductCubitInitial());
   final ProductRepo productRepo;
-  int productleanth = 0;
+  int? productleanth;
 
   Future<void> getProducts() async {
     emit(ProductCubitLoading());
     final result = await productRepo.getProduct();
     result.fold(
       (failur) => emit(ProductCubitFailure(failur.message)),
-      (products) => emit(ProductCubitSuccess(products)),
+      (products) {
+        productleanth =(productleanth!+ products.length)!;
+        print(productleanth);
+        emit(ProductCubitSuccess(products));
+      }
     );
   }
 
@@ -22,9 +26,21 @@ class ProductCubit extends Cubit<ProductState> {
     emit(ProductCubitLoading());
     final result = await productRepo.getBestSellingProduct();
     result.fold((failur) => emit(ProductCubitFailure(failur.message)),
-        (products) {
-      productleanth += products.length;
-      emit(ProductCubitSuccess(products));
-    });
+            (products) {
+              productleanth =(productleanth!+ products.length)!;
+          print(productleanth);
+          emit(ProductCubitSuccess(products));
+        });
   }
+
+  Future<void> searchProductsByName({required String productName}) async {
+    emit(ProductCubitLoading());
+    final result = await productRepo.searchProductsByName(productName: productName);
+    result.fold((failur) => emit(ProductCubitFailure(failur.message)),
+            (products) {
+          //productleanth += products.length;
+          emit(ProductCubitSuccess(products));
+        });
+  }
+   
 }

@@ -20,15 +20,14 @@ class productRepoImpl implements ProductRepo {
       }) as List<Map<String, dynamic>>;
 
       List<ProductModel> products =
-          data.map((e) => ProductModel.fromJson(e)).toList();
+      data.map((e) => ProductModel.fromJson(e)).toList();
       List<ProductEntity> productEntit =
-          products.map((e) => e.toEntity()).toList();
+      products.map((e) => e.toEntity()).toList();
       return right(productEntit);
     } catch (e) {
       return left(ServerFailure('Failed to load products'));
     }
   }
-
   @override
   Future<Either<Failur, List<ProductEntity>>> getProduct() async {
     try {
@@ -44,4 +43,31 @@ class productRepoImpl implements ProductRepo {
       return left(ServerFailure('Failed to load products'));
     }
   }
+  Future<Either<Failur, List<ProductEntity>>> searchProductsByName(
+      {required String productName}) async {
+    try {
+      if (productName.isEmpty) {
+        return left(ServerFailure('Product name can’t be empty'));
+      }
+
+      var query = {
+        'searchField': 'name',
+        'keyword': productName,
+        'limit': 20, // ممكن تغير العدد حسب الحاجة
+      };
+
+      var data = await dataBaseServeces.getData(
+        path: BackEndImpoint.getproducts,
+        query: query,
+      ) as List<Map<String, dynamic>>;
+
+      List<ProductModel> products = data.map((e) => ProductModel.fromJson(e)).toList();
+      List<ProductEntity> productEntit = products.map((e) => e.toEntity()).toList();
+
+      return right(productEntit);
+    } catch (e) {
+      return left(ServerFailure('Failed to search products'));
+    }
+  }
+
 }

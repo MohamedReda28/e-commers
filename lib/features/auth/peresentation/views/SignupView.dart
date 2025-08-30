@@ -7,7 +7,7 @@ import '../../../../core/helpes_function/BuildSnakBar.dart';
 import '../../../../core/services/services/git_it_Service.dart';
 import '../../domain/repos/Auth Repo.dart';
 import '../cubits/SignUp_Cubite/signup_cubit_cubit.dart';
-import '../cubits/Signin_Cubit/cubit/signin_cubit.dart';
+import '../cubits/Signin_Cubit/signin_cubit.dart';
 
 class SignUpView extends StatelessWidget {
   const SignUpView({super.key});

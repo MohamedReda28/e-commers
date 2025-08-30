@@ -29,6 +29,7 @@ class _SignupViewBodyState extends State<SignupViewBody> {
         padding: const EdgeInsets.symmetric(horizontal: kHorsintalPadding),
         child: Form(
           key: formKey,
+          autovalidateMode:autoValidateMode ,
           child: Column(
             children: [
               const SizedBox(

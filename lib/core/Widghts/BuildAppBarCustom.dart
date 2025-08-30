@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-import 'package:fruts_store/core/helpes_function/getUser.dart';
 import 'package:fruts_store/core/uitels/App_TextStyle.dart';
-
 import '../uitels/app_images.dart';
 
 AppBar buildAppBar(context, {required String title}) {

@@ -1,7 +1,7 @@
 import 'package:bloc/bloc.dart';
 import 'package:meta/meta.dart';
-import '../../../../domain/entites/User entites.dart';
-import '../../../../domain/repos/Auth Repo.dart';
+import '../../../domain/entites/User_Entites.dart';
+import '../../../domain/repos/Auth Repo.dart';
 part 'signin_state.dart';
 
 class SigninCubit extends Cubit<SigninState> {

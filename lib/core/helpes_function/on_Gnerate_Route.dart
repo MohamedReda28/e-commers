@@ -4,6 +4,8 @@ import '../../features/Best_salling_frut/presentation/Views/Best Salling view.da
 import '../../features/Home/domines/entites/CardEntity.dart';
 import '../../features/Home/peresntation/views/mainView.dart';
 import '../../features/Splash/Presentation/Veiws/SpalshView.dart';
+import '../../features/auth/peresentation/views/ForgetPass.dart';
+import '../../features/auth/peresentation/views/SearchView.dart';
 import '../../features/auth/peresentation/views/SiginView.dart';
 import '../../features/auth/peresentation/views/SignupView.dart';
 import '../../features/checkout/presintation/views/checkout_view.dart';
@@ -23,8 +25,12 @@ Route<dynamic> onGenerateRoute(RouteSettings settings) {
       return MaterialPageRoute(builder: (context) => const SiginView());
     case SignUpView.routeName:
       return MaterialPageRoute(builder: (context) => const SignUpView());
+    case ForgetpassView.routeName:
+      return MaterialPageRoute(builder: (context) => const ForgetpassView());
     case ProdutsView.routeName:
       return MaterialPageRoute(builder: (context) => const ProdutsView());
+    case Searchview.routeName:
+      return MaterialPageRoute(builder: (context) => const Searchview(),);
     case Checkout_View.routeName:
       return MaterialPageRoute(
           builder: (context) => Checkout_View(

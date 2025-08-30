@@ -2,13 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fruts_store/features/Home/peresntation/views/mainView.dart';
 import 'package:fruts_store/features/auth/peresentation/views/widghts/SiginViewBoby.dart';
-
 import '../../../../core/Widghts/BuildAppBarCustom.dart';
 import '../../../../core/Widghts/CustomProgressHUD.dart';
 import '../../../../core/helpes_function/BuildSnakBar.dart';
 import '../../../../core/services/services/git_it_Service.dart';
 import '../../domain/repos/Auth Repo.dart';
-import '../cubits/Signin_Cubit/cubit/signin_cubit.dart';
+import '../cubits/Signin_Cubit/signin_cubit.dart';
 
 class SiginView extends StatelessWidget {
   const SiginView({super.key});

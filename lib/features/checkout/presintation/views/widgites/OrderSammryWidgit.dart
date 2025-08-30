@@ -23,7 +23,7 @@ class Ordersammrywidgit extends StatelessWidget {
               Text('المجموع الفرعي :', style: AppStyle.regular13),
               Spacer(),
               Text(
-                '${context.read<OrderEntity>().cartList.CalculteTotlePrice()} جنيه',
+                '${context.read<OrderInputEntity>().cartList.CalculteTotlePrice()} جنيه',
                 style: AppStyle.semibold16,
               )
             ],
@@ -51,7 +51,7 @@ class Ordersammrywidgit extends StatelessWidget {
               Text('الكلي', style: AppStyle.bold16),
               Spacer(),
               Text(
-                '${(context.read<OrderEntity>().cartList.CalculteTotlePrice()) + kpriceDelivary} جنيه',
+                '${(context.read<OrderInputEntity>().cartList.CalculteTotlePrice()) + kpriceDelivary} جنيه',
                 style: AppStyle.bold16,
               )
             ],

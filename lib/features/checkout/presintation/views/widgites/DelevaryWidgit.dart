@@ -17,7 +17,7 @@ class Delevarywidgit extends StatelessWidget {
           SizedBox(
             width: 8,
           ),
-          Text(context.read<OrderEntity>().addressOrderentity.toStringg(),
+          Text(context.read<OrderInputEntity>().addressOrderentity.toStringg(),
               style: AppStyle.regular16.copyWith(
                 color: Color(0xFF4E5556),
               )),

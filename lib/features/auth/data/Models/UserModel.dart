@@ -1,8 +1,8 @@
 import 'package:firebase_auth/firebase_auth.dart';
-
-import '../../domain/entites/User entites.dart';
+import '../../domain/entites/User_Entites.dart';
 
 class UserModel extends UserEntity {
+
   UserModel({required super.name, required super.email, required super.uid});
   factory UserModel.fromFirebaseUser(User user) {
     return UserModel(

@@ -1,7 +1,6 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:fruts_store/features/checkout/presintation/views/widgites/Scetion_Shipping.dart';
-
 import 'Address_PageView.dart';
 import 'Payment_section.dart';
 

@@ -10,11 +10,13 @@ class OrederRepoImpl implements OrderRepo {
   final DataBaseServeces dataBaseServeces;
   OrederRepoImpl({required this.dataBaseServeces});
   @override
-  Future<Either<Failur, void>> addOrder(OrderEntity orderEntity) async {
+  Future<Either<Failur, void>> addOrder(OrderInputEntity orderEntity) async {
     try {
+      var order = OrderModel.fromEntity(orderEntity);
       await dataBaseServeces.addData(
           path: BackEndImpoint.addOrders,
-          data: OrderModel.fromOEntity(orderEntity).toJson());
+          documentId:order.oID ,
+          data: order.toJson());
       return const Right(null);
     } catch (e) {
       return Left(ServerFailure(e.toString()));

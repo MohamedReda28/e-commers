@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:fruts_store/features/auth/peresentation/views/ForgetPass.dart';
 import '../../../../../constsns.dart';
 import '../../../../../core/Widghts/Custom Password Feild.dart';
 import '../../../../../core/Widghts/CustomTextField.dart';
@@ -8,7 +9,7 @@ import '../../../../../core/Widghts/Custom_Botton.dart';
 import '../../../../../core/uitels/App_Color.dart';
 import '../../../../../core/uitels/App_TextStyle.dart';
 import '../../../../../core/uitels/app_images.dart';
-import '../../cubits/Signin_Cubit/cubit/signin_cubit.dart';
+import '../../cubits/Signin_Cubit/signin_cubit.dart';
 import '../SignupView.dart';
 import 'Custom Driver And Text.dart';
 import 'Dont Have Account Widgh.dart';
@@ -62,10 +63,16 @@ class _SiginVeiwBodyState extends State<SiginVeiwBody> {
               Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
-                  Text(
-                    'نسيت كلمة المرور؟',
-                    style: AppStyle.semibold13
-                        .copyWith(color: AppColor.lightPrimaryColor),
+                  GestureDetector(
+                    onTap: (){
+                      Navigator.pushReplacementNamed(context, ForgetpassView.routeName);
+
+                    },
+                    child: Text(
+                      'نسيت كلمة المرور؟',
+                      style: AppStyle.semibold13
+                          .copyWith(color: AppColor.lightPrimaryColor),
+                    ),
                   ),
                 ],
               ),

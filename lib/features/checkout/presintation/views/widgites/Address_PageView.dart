@@ -30,7 +30,7 @@ class AddressPageview extends StatelessWidget {
                   hinttext: 'الاسم كامل',
                   textInputType: TextInputType.name,
                   onSaved: (value) {
-                    context.read<OrderEntity>().addressOrderentity!.name =
+                    context.read<OrderInputEntity>().addressOrderentity!.name =
                         value;
                   }),
               SizedBox(
@@ -40,7 +40,7 @@ class AddressPageview extends StatelessWidget {
                   hinttext: 'البريد الإلكتروني',
                   textInputType: TextInputType.name,
                   onSaved: (value) {
-                    context.read<OrderEntity>().addressOrderentity!.email =
+                    context.read<OrderInputEntity>().addressOrderentity!.email =
                         value;
                   }),
               SizedBox(
@@ -50,7 +50,7 @@ class AddressPageview extends StatelessWidget {
                   hinttext: 'العنوان',
                   textInputType: TextInputType.name,
                   onSaved: (value) {
-                    context.read<OrderEntity>().addressOrderentity!.address =
+                    context.read<OrderInputEntity>().addressOrderentity!.address =
                         value;
                   }),
               SizedBox(
@@ -60,7 +60,7 @@ class AddressPageview extends StatelessWidget {
                   hinttext: 'المدينه',
                   textInputType: TextInputType.name,
                   onSaved: (value) {
-                    context.read<OrderEntity>().addressOrderentity!.city =
+                    context.read<OrderInputEntity>().addressOrderentity!.city =
                         value;
                   }),
               SizedBox(
@@ -71,7 +71,7 @@ class AddressPageview extends StatelessWidget {
                   textInputType: TextInputType.name,
                   onSaved: (value) {
                     context
-                        .read<OrderEntity>()
+                        .read<OrderInputEntity>()
                         .addressOrderentity!
                         .addressDetels = value;
                   }),
@@ -82,7 +82,7 @@ class AddressPageview extends StatelessWidget {
                   hinttext: 'رقم الهاتف',
                   textInputType: TextInputType.number,
                   onSaved: (value) {
-                    context.read<OrderEntity>().addressOrderentity!.phone =
+                    context.read<OrderInputEntity>().addressOrderentity!.phone =
                         value;
                   }),
               SizedBox(

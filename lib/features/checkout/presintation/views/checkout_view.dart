@@ -21,12 +21,12 @@ class Checkout_View extends StatefulWidget {
 }
 
 class _Checkout_ViewState extends State<Checkout_View> {
-  late OrderEntity orderEntity;
+  late OrderInputEntity orderEntity;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
-    orderEntity =OrderEntity(
+    orderEntity =OrderInputEntity(
       cartList: widget.cartItems,
       uID: getUser().uid,
     );

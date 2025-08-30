@@ -27,10 +27,10 @@ class _ScetionShippingState extends State<ScetionShipping>
           title: 'الدفع عند الاستلام',
           subtitle: 'التسليم من المكان',
           price:
-              '${(context.read<OrderEntity>().cartList.CalculteTotlePrice()) + kpriceDelivary}',
+              '${(context.read<OrderInputEntity>().cartList.CalculteTotlePrice()) + kpriceDelivary}',
           ontap: () {
             selectindex = 1;
-            context.read<OrderEntity>().paywithCash = true;
+            context.read<OrderInputEntity>().paywithCash = true;
             setState(() {});
           },
         ),
@@ -40,14 +40,14 @@ class _ScetionShippingState extends State<ScetionShipping>
         ShippingItem(
           ontap: () {
             selectindex = 2;
-            context.read<OrderEntity>().paywithCash = false;
+            context.read<OrderInputEntity>().paywithCash = false;
 
             setState(() {});
           },
           isselected: selectindex == 2,
           title: 'الدفع اونلاين',
           subtitle: 'يرجي تحديد طريقه الدفع',
-          price: '${context.read<OrderEntity>().cartList.CalculteTotlePrice()}',
+          price: '${context.read<OrderInputEntity>().cartList.CalculteTotlePrice()}',
         ),
       ],
     );

@@ -17,7 +17,7 @@ class FirebaseAuthServece {
       );
       return credential.user!;
     } on FirebaseAuthException catch (e) {
-      log('Excaption  in CreateUserWithEmailAndPassword. ${e.toString()}');
+      log('Excaption  in CreateUserWithEmailAndPassword. ${e.toString()} code = ${e.code}');
       if (e.code == 'weak-password') {
         throw CustomException(message: 'كلمه المرور ضعيفه');
       } else if (e.code == 'network-request-failed') {
@@ -28,7 +28,7 @@ class FirebaseAuthServece {
         throw CustomException(message: 'حدث خطأ,حاول لاحقا');
       }
     } catch (e) {
-      log('Excaption  in CreateUserWithEmailAndPassword. ${e.toString()}');
+      log('Excaption  in CreateUserWithEmailAndPassword. ${e.toString()} ');
       throw CustomException(message: 'حدث خطأ,حاول لاحقا');
     }
   }
@@ -42,7 +42,7 @@ class FirebaseAuthServece {
       );
       return credential.user!;
     } on FirebaseAuthException catch (e) {
-      log('Excaption  in SignInWithEmailAndPassword. ${e.toString()}');
+      log('Excaption  in SignInWithEmailAndPassword. ${e.toString()}code = ${e.code}');
       if (e.code == 'user-not-found') {
         throw CustomException(
             message: 'البريد الاليكتروني او كلمه المرور غير صحيحة');
@@ -89,6 +89,28 @@ class FirebaseAuthServece {
             .signInWithCredential(facebookAuthCredential))
         .user!;
   }
+
+  Future<void> sendPasswordResetEmail({required String email}) async {
+    try {
+      await FirebaseAuth.instance.sendPasswordResetEmail(email: email);
+    } on FirebaseAuthException catch (e) {
+      log('Exception in sendPasswordResetEmail: ${e.toString()}');
+      if (e.code == 'user-not-found') {
+        throw CustomException(message: 'لا يوجد حساب مرتبط بهذا البريد الإلكتروني');
+      } else if (e.code == 'invalid-email') {
+        throw CustomException(message: 'صيغة البريد الإلكتروني غير صحيحة');
+      } else if (e.code == 'network-request-failed') {
+        throw CustomException(message: 'يرجى التحقق من الاتصال بالإنترنت');
+      } else {
+        throw CustomException(message: 'حدث خطأ أثناء إرسال الرابط، حاول لاحقًا');
+      }
+    } catch (e) {
+      log('Unknown exception in sendPasswordResetEmail: ${e.toString()}');
+      throw CustomException(message: 'حدث خطأ غير متوقع، حاول لاحقًا');
+    }
+  }
+
+
 
   bool isLoggedIn() {
     return FirebaseAuth.instance.currentUser != null;

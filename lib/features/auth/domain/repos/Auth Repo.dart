@@ -1,8 +1,6 @@
 import 'package:dartz/dartz.dart';
-import 'package:fruts_store/features/auth/data/Models/UserModel.dart';
-
 import '../../../../core/erroes/Failur.dart';
-import '../entites/User entites.dart';
+import '../entites/User_Entites.dart';
 
 abstract class AuthRepo {
   Future<Either<Failur, UserEntity>> CreateUserWithEmailAndPassword(
@@ -21,4 +19,5 @@ abstract class AuthRepo {
   Future saveUserData({required UserEntity user});
 
   Future<Either<Failur, UserEntity>> signInWithFacebook();
+  Future<Either<Failur, void>> sendPasswordResetEmail({required String email});
 }
